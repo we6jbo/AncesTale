@@ -1,0 +1,2 @@
+#pragma once
+#define HVZA_PINNED_CERT_SHA256 "ec4e4af5e84088f25fddbbd7098f362af2c67c299072ba9eca74166ffd057f5b"

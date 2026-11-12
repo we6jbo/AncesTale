@@ -1,50 +1,63 @@
-build/
-build-*/
-cmake-build-*/
-CMakeFiles/
-CMakeCache.txt
-*.o
-*.user
-
-# AncesTale private/generated files (GitHub privacy cleanup)
+# AncesTale: Qt and CMake output must remain in-project, but not in Git.
 /build/
 /build-*/
 /cmake-build-*/
 /.hvza-build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+*.o
+*.a
+*.out
+*.exe
+*.so
+*.so.*
+
+# IDE state, local backups, logs, and generated archives.
 /.qtcreator/
+*.user
+*.user.*
 /.ancestale-backups/
 /.ancestale-private/
 /.ancestale-logs/
-/.hvza-scripts/
-/lib/
-/certificate/
-/records/
-/hvza_pinned_cert.h
 *.backup.*
-*.db
-*.db-*
-*.sqlite
-*.sqlite3
-*.pem
-*.key
-*.p12
-*.pfx
-*.sig
-*.so
-*.so.*
-*.o
-*.a
-*.bin
-*.exe
-*.out
-*.user
-*.user.*
 *.log
 *.zip
 *.tar
 *.gz
 *.7z
+
+# Secrets, credentials and actual private signing keys.
+.env
+.env.*
+!.env.example
+*.key
+*.p12
+*.pfx
+*private*.pem
+*secret*.pem
+*credentials*.json
+*token*.json
+id_rsa*
+id_ed25519*
+
+# Research interchange/template includes identifying source titles;
+# review and sanitize before ever publishing a copy.
+/data/pedigree-template.json
+
+# Only explicitly reviewed graphics should enter public Git history.
 *.png
 *.jpg
 *.jpeg
-*.pdf
+*.webp
+!/orev.png
+
+# Intentionally PUBLIC: /lib/story.db (user-approved).
+# Public certificates (*.pem without 'private'), detached signatures (*.sig),
+# C++ headers, project sources and documentation are allowed.
+# Do not add a global *.db, *.pem, *.sig, /lib/, /certificate/ or /records/ rule.
+
+# Detached signature is intentionally public, unlike the compiled library.
+!/lib/libhvza.so.sig

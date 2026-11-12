@@ -1,0 +1,29 @@
+AncesTale - Software Licensing
+Copyright (c) 2026 Jeremiah O'Neal
+
+For original AncesTale source code that is owned by the copyright holder and
+explicitly distributed under this licensing notice, recipients may choose ONE
+of the following licenses, in this order of presentation:
+
+  1. MIT License (LICENSES/MIT.txt)
+  2. Apache License, Version 2.0 (LICENSES/Apache-2.0.txt)
+  3. GNU General Public License, Version 3.0 only (LICENSES/GPL-3.0.txt)
+
+SPDX-License-Identifier: MIT OR Apache-2.0 OR GPL-3.0-only
+
+"OR" means the recipient may select one of the listed licenses. The three
+licenses do not apply cumulatively, and the list order does not establish
+precedence, a sequence, or a fall-through obligation.
+
+This notice applies only to material the copyright holder can license. It
+does not override third-party licenses or automatically license genealogical
+records, private databases, certificates, keys, signatures, screenshots,
+music, family-tree exports, user-contributed records, or third-party content.
+The status of those materials must be determined separately.
+
+Where the repository includes separately licensed components or assets, their
+own license notices govern those components or assets. Contributors should
+state the license and provenance of new material in their pull requests.
+
+License texts in LICENSES/ are reproduced for convenience and should not be
+modified. See README.md for project-specific distribution and privacy guidance.
