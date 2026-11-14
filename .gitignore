@@ -61,3 +61,6 @@ id_ed25519*
 
 # Detached signature is intentionally public, unlike the compiled library.
 !/lib/libhvza.so.sig
+
+# Local music collection
+/Music/
