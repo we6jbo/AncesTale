@@ -1,0 +1,3 @@
+# v0.7.7 media and narration integration candidate
+
+Adds staging kit, local media validation, native Movies / Voices scan tab, Piper CLI generation helper, hosted audio playback with browser fallback, video playback helper, and long-session Vibe instructions. No external software automatically installed, no media downloaded, no Pi deployment or Git operations. The emergency game still has its original four scenes per day; nine expanded chapters, actual movies, generated voices and live branch queue remain to be prepared and tested. Qt build and browser playback untested. Use owner publication only after review.

@@ -114,3 +114,8 @@ id_ed25519*
 /ancestale-github-cleanup.sh
 
 /records/test.txt
+
+# Local alpha runtime and one-time qualification marker (keep qsca.txt eligible)
+/workflow/alpha2/
+/workflow/next-branch-20261114/
+/test4/remove-this-once-commit-push-is-done.txt

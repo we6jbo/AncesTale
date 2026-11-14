@@ -110,3 +110,17 @@ Before publishing this licensing declaration, the maintainer should confirm owne
 ## v0.7.3 recovery
 
 See [release notes](RELEASE-073.md) for the alpha fixes, fallback schedule, tests and limitations. The fallback is prewritten and cannot replace arbitrary AI research. Original music recordings, private credentials, player data and runtime logs are not included in the public release.
+
+
+## v0.7.4 Continued Research
+Native Qt tab reads the private AncesTaleextended JSON queue, refreshes every second, supports search, pending/resolved filtering, evidence review, manual addition, resolution/reopening and copyable Vibe prompts. See workflow/CONTINUED-RESEARCH.md. The JSON is not bundled or published.
+
+
+## v0.7.5 — Extended integration
+Private read-only collection of AncesTaleextended research, family groups, music metadata and screenshot inventory; guided local review, tab arrows, per-tab text size. Vibe prepares reviewed Pi and publication outputs under existing rules. No automatic public upload.
+
+## v0.7.6 — Narrated adventure
+Browser-local narration controller, larger adjustable text, independent speech controls, music ducking and narrated recovery preview. Alpha Test 2 is documented in workflow/alpha2-20261114.md; live Pi integration and voice availability must be tested on the player browser. See RELEASE-076.md.
+
+### v0.7.7 media staging
+Run the release kit setup-media.py to prepare /home/we6jbo/1/; review readme.md there. Movies / Voices tab scans the index with ffprobe. Hosted narration and cinema helpers require actual reviewed downloads, Piper installation and verified Pi deployment. Long-session content and asynchronous branch request integration are Vibe requirements, not a completed dynamic game engine.
