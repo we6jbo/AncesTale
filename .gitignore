@@ -74,3 +74,43 @@ id_ed25519*
 
 # VVWK local caches
 /vvwk/__pycache__/
+
+# Local AncesTale data (never commit)
+
+/invitations/__pycache__/
+
+/.ancestale-invitations/
+
+/music/__pycache__/
+
+/.ancestale-music/
+
+# Recovery logs and private runtime data
+/.fallback-local/
+/emergency-notes/
+/game-pictures/
+**/__pycache__/
+*.bak
+*.backup
+*session-cookie*
+*enrollment*.json
+*password*
+!/invitations/setup-password.sh
+/screen-captures/
+
+# Private runtime exports and unpublished alpha deployment
+/workflow/alpha-20261114/index.html
+*.pyc
+*.pyo
+*.jsonl
+*.sqlite-journal
+*.db-wal
+*.db-shm
+*.db-journal
+/recipients.json
+/enrollments.json
+/smtp-password
+/.hvza-scripts/
+/ancestale-github-cleanup.sh
+
+/records/test.txt

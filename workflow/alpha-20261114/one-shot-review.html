@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AncesTale Alpha — Two Branches (2026-11-14)</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; background:#0d1420; color:#f0ead2;
+    font:16px Georgia, 'Times New Roman', serif; overflow:hidden; }
+  #scene { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  #ui { position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:flex-end; padding:0 16px 18px;
+    pointer-events:none; }
+  .panel { pointer-events:auto; background:rgba(13,20,32,.82); border:1px solid #78916e;
+    border-radius:12px; padding:14px 18px; max-width:720px; width:100%;
+    box-shadow:0 6px 24px #000a; }
+  h1 { font-size:clamp(22px,4vw,40px); margin:.2em 0; color:#e5dfb8; letter-spacing:.04em; }
+  h2 { font-size:clamp(18px,3vw,26px); margin:.1em 0 .4em; color:#e4c878; }
+  .tag { display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px;
+    margin-left:8px; vertical-align:middle; }
+  .fact { background:#314b38; border:1px solid #78916e; color:#dff0d8; }
+  .imagined { background:#4a3a12; border:1px solid #e4c878; color:#f5e6b8; }
+  .choices { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  button { pointer-events:auto; cursor:pointer; border-radius:10px; border:1px solid #78916e;
+    background:#314b38; color:#f0ead2; font:600 15px Georgia, serif; padding:10px 16px; }
+  button:hover, button:focus-visible { background:#45694e; outline:3px solid #e5dfb8; outline-offset:2px; }
+  button.primary { background:#74602d; border-color:#e4c878; }
+  button.primary:hover, button.primary:focus-visible { background:#8a7436; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .small { font-size:13px; opacity:.85; }
+  #title { justify-content:center; text-align:center; }
+  #soundState { font-size:13px; opacity:.9; }
+  .kbd { border:1px solid #78916e; border-radius:6px; padding:0 6px; font:13px monospace; background:#0008; }
+  #dialog { display:none; margin-top:10px; font-style:italic; color:#f5e6b8;
+    border-left:3px solid #e4c878; padding-left:10px; }
+  #toast { position:absolute; top:12px; left:50%; transform:translateX(-50%);
+    background:#0d1420d9; border:1px solid #78916e; border-radius:8px; padding:6px 14px;
+    font-size:13px; pointer-events:none; }
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div id="toast" hidden></div>
+<div id="ui">
+  <div class="panel" id="title">
+    <h1>AncesTale <span class="small">alpha test · 2026-11-14</span></h1>
+    <p>A short two-branch walk through the family tree.<br>
+       <span class="small">Everything marked <span class="tag fact">DOCUMENTED FACT</span> comes from the signed family records; anything marked <span class="tag imagined">IMAGINED SCENE</span> is fiction for atmosphere.</span></p>
+    <div class="row" style="justify-content:center">
+      <button class="primary" id="begin">Begin</button>
+      <button id="resume" hidden>Resume</button>
+      
+    </div>
+    <p class="small" id="soundState">Music starts at Begin if browser autoplay requires a gesture. Keyboard: <span class="kbd">Enter</span> activate, <span class="kbd">↑</span><span class="kbd">↓</span> choose, <span class="kbd">1</span>–<span class="kbd">3</span> quick choices.</p>
+  </div>
+  <div class="panel" id="game" hidden>
+    <h2 id="sceneTitle"></h2>
+    <div id="sceneBody"></div>
+    <div id="dialog"></div>
+    <div class="choices" id="choices"></div>
+  </div>
+</div>
+<script defer src="/nov-game/VVWK/presence.js"></script>
+<script>
+"use strict";
+/* AncesTale one-time alpha — 2026-11-14. Story persons verified against the signed
+   HVZA snapshot (prepared 2026-11-14 08:18). No private identifiers on this page. */
+const MUSIC = {
+  intro:  "/nov-game/music/_FZ_Side_E_-_Trail__by_Disasterpeace.wav",
+  middle: "/nov-game/music/A_Most_Joyous_Occasion_by_Brylie_Christopher_Oxley.ogg",
+  outro:  "/nov-game/music/01_Lentitud.ogg",
+  chime:  "/nov-game/chime.wav"
+};
+/* Cue plan, America/Los_Angeles wall clock. Late joiners begin late; missed cues are skipped. */
+const CUES = [ {h:8,m:30,s:0,track:'middle'}, {h:8,m:39,s:0,track:'outro'}, {h:8,m:45,s:0,track:'end'} ];
+const COOKIE = "ancestale_alpha_20261114";
+
+const SCENES = {
+  burke: {
+    title: "Burke C. Maynard — North Dakota, 1904",
+    body: '<span class="tag fact">DOCUMENTED FACT</span> Burke C Maynard was born 11 Jun 1904 in North Dakota and died 05 Dec 1986 in Morro Bay, California. His parents were William R Maynard and Gail Agnes Hillman; his wife was Amelia B Hetdke. (Signed record; Find a Grave memorial 93464196.)',
+    scenery: "prairie", next: "josef"
+  },
+  josef: {
+    title: "Josef Kiehlbauch — Neuberg, Russia, 1850",
+    body: '<span class="tag fact">DOCUMENTED FACT</span> Josef Kiehlbauch was born 1 Jan 1850 in Neuberg, Russia and died 14 Sep 1908 in Chicago, Illinois. His parents were Joseph Sr Kiehlbauch and Johanna Knoepfle; his wife was Barbara Beck; his daughter was Amelia Kiehlbauch. (Find a Grave memorial 64437597.) The records connect these two families through later marriages — they do not show Burke and Josef ever meeting.',
+    scenery: "village", next: "odessa"
+  },
+  odessa: {
+    title: "Odessa, the Black Sea port — the way out",
+    body: '<span class="tag fact">DOCUMENTED FACT</span> The family\'s Russian villages — Neuberg (Kherson province), Lustdorf and Alexanderhilf (Grossliebental district) — were German colonies of the Odessa region in the Russian Empire, in what is now Ukraine. From the 1870s, after Russia ended the colonies\' special privileges, many Black Sea Germans emigrated to North America, sailing from Black Sea ports. (Sources: Wikipedia, "Black Sea Germans"; NDSU Germans from Russia Heritage Collection.)',
+    scenery: "village", next: "ship"
+  },
+  ship: {
+    title: "The crossing — steamship to the New World",
+    body: '<span class="tag fact">DOCUMENTED FACT</span> Between 1850 and 1891, 41% of German and East-European emigrants departed via the port of Bremen and 30% via Hamburg, then crossed the Atlantic, most bound for New York. (Source: Wikipedia, "Germany Emigration and Immigration" / U.S. emigration statistics.) German-Russian families from the Odessa region commonly traveled this way in the 1870s–1880s.',
+    scenery: "sea", next: "chicago"
+  },
+  chicago: {
+    title: "Chicago, Illinois — 1908",
+    body: '<span class="tag fact">DOCUMENTED FACT</span> Josef Kiehlbauch died in Chicago, Cook County, Illinois, on 14 Sep 1908 — a major rail hub and arrival city for immigrants heading west. His daughter Amelia Kiehlbauch was born in Tyndall, South Dakota in 1880, after the family had settled in the Dakotas.',
+    scenery: "town", next: "tyndall"
+  },
+  tyndall: {
+    title: "Tyndall, Bon Homme County, South Dakota",
+    body: '<span class="tag fact">DOCUMENTED FACT</span> Joseph Sr Kiehlbauch (d. 1902), Barbara Beck (b. Lustdorf, Russia; d. 1923) and Amelia Kiehlbauch (b. 1880) all lived in Tyndall, Bon Homme County, SD. The first Black Sea German settlements in the U.S. were founded in South Dakota in 1873, and Tyndall was one of Bon Homme County\'s German-Russian towns. (Sources: signed records; Wikipedia, "Black Sea Germans"; Rath, The Black Sea Germans in the Dakotas, via GRHC/NDSU.)',
+    scenery: "town", next: null
+  }
+};
+const IMAGINED = {
+  burke: "A farmhand tips his hat on the porch. \"Hard winters out here, mister, but the wheat still grows.\" — an imagined greeting; no such conversation is recorded.",
+  josef: "An old ferryman squints at the river. \"Many left from villages like this. Chicago was far, but it was work.\" — an imagined voice; no such conversation is recorded.",
+  odessa: "A harbor clerk stamps a manifest. \"Next steamer for Bremen leaves Thursday, weather permitting.\" — an imagined voice; no such conversation is recorded.",
+  ship: "A seasick passenger leans on the rail. \"They say the prairie is flat forever out there.\" — an imagined voice; no such conversation is recorded.",
+  chicago: "A switchman waves a lantern. \"Dakota Territory — all aboard the morning local.\" — an imagined voice; no such conversation is recorded.",
+  tyndall: "A neighbor waves from a sod-roofed house. \"Same sky here as back in Russia, they say.\" — an imagined voice; no such conversation is recorded."
+};
+
+let audio = null, soundOn = true, scene = null, cueTimers = [], scheduled=false; const seenCues=new Set();
+const $ = id => document.getElementById(id);
+const toast = msg => { const t=$("toast"); t.textContent=msg; t.hidden=false; setTimeout(()=>$("toast").hidden=true, 3500); };
+
+function saveProgress(){ document.cookie = COOKIE+"="+encodeURIComponent(JSON.stringify({scene}))+"; path=/nov-game/; SameSite=Lax"; }
+function loadProgress(){ const m=document.cookie.match(new RegExp("(?:^|; )"+COOKIE+"=([^;]*)")); if(!m) return null; try { return JSON.parse(decodeURIComponent(m[1])); } catch(e){ return null; } }
+
+function drawPrairie(ctx,w,h,t){ const g=ctx.createLinearGradient(0,0,0,h); g.addColorStop(0,"#2b3a67"); g.addColorStop(.55,"#c96f2b"); g.addColorStop(1,"#5c4322"); ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+  ctx.fillStyle="#f5d98a"; ctx.beginPath(); ctx.arc(w*.78,h*.2,Math.min(w,h)*.07,0,7); ctx.fill();
+  ctx.fillStyle="#6b4f2a"; ctx.beginPath(); ctx.moveTo(0,h*.72); ctx.quadraticCurveTo(w*.3,h*.6,w*.55,h*.7); ctx.quadraticCurveTo(w*.8,h*.8,w,h*.68); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.fill();
+  ctx.fillStyle="#3f2f1c"; ctx.fillRect(w*.18,h*.62,w*.16,h*.14); ctx.beginPath(); ctx.moveTo(w*.16,h*.62); ctx.lineTo(w*.26,h*.52); ctx.lineTo(w*.36,h*.62); ctx.fill();
+  ctx.strokeStyle="#2c2115"; ctx.lineWidth=3; for(let i=0;i<40;i++){ const x=Math.random()*w, y=h*.78+Math.random()*h*.2; ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x+Math.sin(t/300+i)*4,y-10-Math.random()*8); ctx.stroke(); } }
+function drawVillage(ctx,w,h,t){ const g=ctx.createLinearGradient(0,0,0,h); g.addColorStop(0,"#1d2b4a"); g.addColorStop(.6,"#3d5a80"); g.addColorStop(1,"#293241"); ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+  for(let i=0;i<50;i++){ ctx.fillStyle="rgba(255,255,255,"+(0.3+((i*37)%10)/14)+")"; ctx.fillRect(((i*97)%w), ((i*53)%(h*.5)), 2, 2); }
+  ctx.fillStyle="#0e1626"; ctx.beginPath(); ctx.moveTo(0,h*.8); ctx.quadraticCurveTo(w*.4,h*.68,w,h*.78); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.fill();
+  ctx.fillStyle="#98c1d9"; ctx.beginPath(); ctx.moveTo(0,h*.86); ctx.quadraticCurveTo(w*.5,h*.78,w,h*.88); ctx.lineTo(w,h); ctx.lineTo(0,h); ctx.fill();
+  ctx.fillStyle="#e0cba8"; for(let i=0;i<5;i++){ const x=w*(.12+i*.18), y=h*.68; ctx.fillRect(x,y,w*.08,h*.14); ctx.beginPath(); ctx.moveTo(x-4,y); ctx.lineTo(x+w*.04,y-16); ctx.lineTo(x+w*.08+4,y); ctx.fill(); }
+  ctx.strokeStyle="#e8e3d3"; ctx.lineWidth=2; for(let i=0;i<6;i++){ const x=w*(.05+i*.16); ctx.beginPath(); ctx.moveTo(x,h*.66); ctx.lineTo(x,h*.5); ctx.stroke(); } }
+function drawSea(ctx,w,h,t){ const g=ctx.createLinearGradient(0,0,0,h); g.addColorStop(0,"#0b2545"); g.addColorStop(.6,"#13315c"); g.addColorStop(.75,"#1d4e89"); g.addColorStop(1,"#0a1a2f"); ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+  ctx.fillStyle="#f5d98a"; ctx.beginPath(); ctx.arc(w*.2,h*.15,Math.min(w,h)*.06,0,7); ctx.fill();
+  ctx.strokeStyle="rgba(255,255,255,.35)"; ctx.lineWidth=2; for(let i=0;i<12;i++){ const y=h*.78+i*h*.018; ctx.beginPath(); ctx.moveTo(0,y); for(let x=0;x<=w;x+=40) ctx.lineTo(x+Math.sin(t/500+i+x/60)*8, y+Math.cos(t/700+i)*3); ctx.stroke(); }
+  ctx.fillStyle="#3a2a18"; const bx=w*.55, by=h*.72; ctx.fillRect(bx,by,w*.22,h*.1); ctx.beginPath(); ctx.moveTo(bx+w*.02,by); ctx.lineTo(bx+w*.11,by-h*.16); ctx.lineTo(bx+w*.2,by); ctx.fill(); ctx.strokeStyle="#5a4226"; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(bx+w*.11,by-h*.16); ctx.lineTo(bx+w*.11,by-h*.26); ctx.stroke(); }
+function drawTown(ctx,w,h,t){ const g=ctx.createLinearGradient(0,0,0,h); g.addColorStop(0,"#35507a"); g.addColorStop(.6,"#7a6a58"); g.addColorStop(1,"#4a3f30"); ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+  ctx.fillStyle="#e8e3d3"; ctx.beginPath(); ctx.arc(w*.8,h*.18,Math.min(w,h)*.07,0,7); ctx.fill();
+  ctx.fillStyle="#5c4f3d"; for(let i=0;i<8;i++){ const x=w*(.06+i*.13), y=h*(.55+((i%2)*.12)); ctx.fillRect(x,y,w*.09,h*.3); }
+  ctx.fillStyle="#3d332a"; ctx.fillRect(0,h*.82,w,h*.18); ctx.strokeStyle="#2c2115"; ctx.lineWidth=4; ctx.beginPath(); ctx.moveTo(0,h*.82); ctx.lineTo(w,h*.82); ctx.stroke(); }
+function draw(t){ const c=$("scene"), ctx=c.getContext("2d"); const w=c.width=c.clientWidth*devicePixelRatio, h=c.height=c.clientHeight*devicePixelRatio;
+  const s=(scene&&SCENES[scene])?SCENES[scene].scenery:"prairie";
+  if(s==="sea") drawSea(ctx,w,h,t); else if(s==="town") drawTown(ctx,w,h,t); else if(scene==="burke"||!scene) drawPrairie(ctx,w,h,t); else drawVillage(ctx,w,h,t);
+  requestAnimationFrame(draw); }
+requestAnimationFrame(draw);
+
+function pacificMs(h,m,s){ const now=new Date(); const p={};
+  for(const {type,value} of new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",hour12:false,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"}).formatToParts(now)) p[type]=value;
+  const asUTC=Date.UTC(+p.year,+p.month-1,+p.day,(+p.hour)%24,+p.minute,+p.second); return Date.UTC(+p.year,+p.month-1,+p.day,h,m,s)-(asUTC-now.getTime()); }
+
+function play(track){ if(!soundOn||seenCues.has(track)) return; seenCues.add(track); if(audio){ audio.pause(); audio=null; }
+  audio=new Audio(MUSIC[track]); audio.loop=false; audio.volume=.8; audio.play().then(()=>toast("Playing: "+track)).catch(()=>toast("Playback blocked — press Begin or Enable sound")); }
+function stopAll(){ if(audio){ audio.pause(); audio=null; } }
+function scheduleCues(){ if(scheduled)return; scheduled=true; const now=Date.now();
+  for(const c of CUES){ const at=pacificMs(c.h,c.m,c.s); if(at<=now) continue; cueTimers.push(setTimeout(()=>{ if(c.track==="end"){ stopAll(); if(soundOn) play("chime"); toast("Session end — chime"); } else { stopAll(); setTimeout(()=>play(c.track), 1500); toast("Cue "+c.h+":"+String(c.m).padStart(2,"0")); } }, at-now)); } }
+
+const ORDER=["burke","josef","odessa","ship","chicago","tyndall"];
+function showScene(name){ scene=name; saveProgress(); const s=SCENES[name];
+  $("title").hidden=true; $("game").hidden=false; $("sceneTitle").textContent=s.title; $("sceneBody").innerHTML=s.body;
+  const box=$("choices"); box.innerHTML=""; $("dialog").style.display="none";
+  const mk=(label,fn,primary)=>{ const b=document.createElement("button"); b.textContent=label; if(primary) b.className="primary"; b.onclick=fn; box.appendChild(b); return b; };
+  const i=ORDER.indexOf(name), prev=ORDER[i-1];
+  if(s.next) mk("Continue: "+(SCENES[s.next].title.split("—")[0].trim())+" →", ()=>showScene(s.next), true);
+  if(prev) mk("Look back: "+(SCENES[prev].title.split("—")[0].trim()), ()=>showScene(prev));
+  mk("Talk to someone here (imagined)", ()=>{ const d=$("dialog"); d.textContent=IMAGINED[name]||""; d.style.display="block"; });
+  mk("Inspect the record (fact)", ()=>toast("Record verified in signed snapshot 2026-11-14")); }
+
+$("begin").onclick=()=>{ if(soundOn) play("intro"); scheduleCues(); showScene("burke"); };
+$("resume").onclick=()=>{ if(soundOn) play("intro"); scheduleCues(); const p=loadProgress(); showScene(p&&SCENES[p.scene]?p.scene:"burke"); };
+document.addEventListener("keydown",e=>{ if(!$("game").hidden){ const btns=[...document.querySelectorAll("#choices button")];
+  if(e.key==="1"&&btns[0])btns[0].click(); if(e.key==="2"&&btns[1])btns[1].click(); if(e.key==="3"&&btns[2])btns[2].click(); }
+  else if(!$("title").hidden){ if(e.key==="Enter")$("begin").click(); } });
+const saved=loadProgress(); if(saved&&saved.scene){ $("resume").hidden=false; }
+</script>
+</body>
+</html>

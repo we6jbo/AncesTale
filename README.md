@@ -4,7 +4,7 @@
 
 AncesTale is an evolving, open-source genealogy software project built around a C++/Qt desktop application, a SQLite-backed research library, and an envisioned web adventure game. The long-term goal is to make historical family connections easier to explore, verify, and experience through interactive storytelling.
 
-**Status: active development and research prototype.** The signed genealogy viewer and research-preparation workflow are being developed and tested. The web adventure game, Raspberry Pi hosting, and music integration are **planned**, not shipped features. Do not represent the game as playable today.
+**Status: active development and research prototype.** The signed genealogy viewer and research-preparation workflow are being developed and tested. A LAN-hosted browser alpha was tested November 14, 2026. Invitation acceptance by SMTP, live HTTP deployment, and the ending chime were reported; individual track playback and player activity were not independently verified. Version 0.7.3 adds a prepared recovery adventure and desktop fixes; on-device integration and compilation must still be verified.
 
 ## Why AncesTale?
 
@@ -21,9 +21,9 @@ This project welcomes contributors interested in **Qt/C++, SQLite, cybersecurity
 - **Evidence-first genealogy:** research must separate verified records from tentative identifications, preserve stable identifiers, and provide citations. Existing Pedigree interchange data remains unchanged unless the user explicitly authorizes an import.
 - **Crash recovery:** favor durable checkpoints and inspectable logs during long-running research.
 
-## Planned adventure game
+## Adventure game and recovery prototype
 
-We are exploring a browser-based family-history adventure that draws from reviewed genealogical relationships and documented historical events. Plans include historical exploration, linked sources, interactive narrative, and carefully verified public-domain music. A Raspberry Pi may host an early LAN-only prototype, subject to device safety, network permissions, and authorization.
+We are exploring a browser-based family-history adventure that draws from reviewed genealogical relationships and documented historical events. Plans include historical exploration, linked sources, interactive narrative, and carefully verified public-domain music. The early LAN-only prototype is hosted on a Raspberry Pi. A nine-day prewritten recovery adventure is provided for November 21–29 (9 AM–3:30 PM Pacific), gated by owner approval and intended only when live AI assistance fails.
 
 **A genealogy record is not game-ready merely because it exists in the database.** Before rendering or publishing, a separate export/review layer must check the accuracy, provenance, living-person privacy, and rights for the data used.
 
@@ -32,7 +32,7 @@ We are exploring a browser-based family-history adventure that draws from review
 ### Requirements
 
 - Linux workstation with a recent C++17 compiler and CMake (3.21 or newer for the currently supplied project snapshot).
-- Qt 6 development libraries with the `Widgets` module and Qt Creator (recommended).
+- Qt 6 development libraries with the `Widgets`, `Network`, and `Multimedia` modules and Qt Creator (recommended).
 - OpenSSL development libraries for the certificate-verification implementation.
 - The existing AncesTale signed runtime components, installed separately and verified before use. **The public source repository may deliberately omit the database, compiled library, certificate, and signatures.**
 
@@ -106,3 +106,7 @@ Before publishing this licensing declaration, the maintainer should confirm owne
 ## Project philosophy
 
 **Build openly. Verify carefully. Keep people and sources at the center of the story.**
+
+## v0.7.3 recovery
+
+See [release notes](RELEASE-073.md) for the alpha fixes, fallback schedule, tests and limitations. The fallback is prewritten and cannot replace arbitrary AI research. Original music recordings, private credentials, player data and runtime logs are not included in the public release.

@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.21)
-project(AncesTale VERSION 0.5.0 LANGUAGES CXX)
+project(AncesTale VERSION 0.7.3 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 find_package(Qt6 REQUIRED COMPONENTS Widgets Network Multimedia)
 find_package(OpenSSL REQUIRED COMPONENTS Crypto)
-qt_add_executable(AncesTale main.cpp mainwindow.cpp mainwindow.h mainwindow.ui sessionpanel.cpp sessionpanel.h vvwkpanel.cpp vvwkpanel.h playerpanel.cpp playerpanel.h)
+qt_add_executable(AncesTale main.cpp mainwindow.cpp mainwindow.h mainwindow.ui sessionpanel.cpp sessionpanel.h vvwkpanel.cpp vvwkpanel.h playerpanel.cpp playerpanel.h invitationpanel.cpp invitationpanel.h musicpanel.cpp musicpanel.h)
 target_link_libraries(AncesTale PRIVATE Qt6::Widgets Qt6::Network Qt6::Multimedia OpenSSL::Crypto)
 # Always use an in-project build directory in Qt Creator: <project>/build/Desktop_Debug.
 

@@ -31,6 +31,15 @@ class VVWKMixin:
     # Preserve name and original expiry. Only record activity on game pages, not diagnostics.
     if page.startswith('/nov-game/VVWK/'):return reply(200,{'message':'Recognized existing enrollment','name':record['name']})
     record.update(last_seen=now,last_ip=self.client_address[0],last_page=page);message={'message':'Recognized existing enrollment','name':record['name']};cookie=None
+    event=req.get('event',''); detail=req.get('detail','')
+    if event in ('scene','choice','music_started','music_failed','chime_started','session_end','heartbeat') and isinstance(detail,str) and re.fullmatch(r'[A-Za-z0-9_-]{1,60}',detail):
+     try:
+      p=ROOT/'game-events.jsonl'
+      fd=os.open(p,os.O_WRONLY|os.O_CREAT|os.O_APPEND|os.O_NOFOLLOW,0o600)
+      with os.fdopen(fd,'a') as f:
+       f.write(json.dumps({'time':now,'event':event,'detail':detail})+'\n');f.flush();os.fsync(f.fileno())
+     except OSError:pass
+
    fd,tmp=tempfile.mkstemp(dir=ROOT,prefix='.enroll-')
    try:
     with os.fdopen(fd,'w') as f:json.dump(data,f,indent=2);f.flush();os.fsync(f.fileno())
