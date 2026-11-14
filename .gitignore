@@ -64,3 +64,13 @@ id_ed25519*
 
 # Local music collection
 /Music/
+
+# AncesTale local session data and unreviewed music
+/.session-local/
+/Music/
+/.install-*/
+/.ancestale-backups/
+/session/__pycache__/
+
+# VVWK local caches
+/vvwk/__pycache__/

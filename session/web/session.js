@@ -1,0 +1,12 @@
+/* Include on the existing game page, served from /nov-game/session.js. */
+(()=>{
+ const base='/nov-game/', panel=document.createElement('section');
+ const label=document.createElement('p'), clock=document.createElement('p'), arm=document.createElement('button');
+ arm.textContent='Enable session sound';panel.append(label,clock,arm);document.body.append(panel);
+ const audio=new Audio(), chime=new Audio(base+'chime.wav');audio.loop=true;audio.volume=.65;
+ let state=null,armed=false,active='',ended='',last=0,pending=false,starting=false;
+ arm.onclick=async()=>{armed=true;arm.textContent='Sound enabled';try{chime.muted=true;await chime.play();chime.pause();chime.currentTime=0;chime.muted=false;}catch{chime.muted=false;}tick();};
+ async function poll(){if(pending)return;pending=true;try{const r=await fetch(base+'ancestale-session.json',{cache:'no-store',signal:AbortSignal.timeout(2500)});if(!r.ok)throw Error('HTTP');const o=await r.json();if(o.schema!=='ancestale.session.v1'||!/^[A-Za-z0-9_-]{1,80}$/.test(o.id)||!/^[A-Za-z0-9][A-Za-z0-9_. -]{0,150}\.(mp3|ogg|wav|flac|m4a)$/i.test(o.file)||o.file.includes('..')||Date.parse(o.end)-Date.parse(o.start)!==600000)throw Error('state');state=o;last=Date.now();}catch{}finally{pending=false;tick();}}
+ async function tick(){if(!state){label.textContent='Waiting for session';return;}const now=Date.now(),start=Date.parse(state.start),end=Date.parse(state.end),left=Math.max(0,Math.ceil((end-now)/1000));clock.textContent=`${Math.floor(left/60)}:${String(left%60).padStart(2,'0')}`;if(now>=end){audio.pause();clock.textContent='00:00 — Session ended';if(active===state.id&&ended!==state.id&&armed){ended=state.id;chime.play().catch(()=>{label.textContent='Ending chime blocked by browser';});}active='';return;}if(now-last>15000){audio.pause();active='';label.textContent='Connection stale; audio stopped';return;}if(now<start){label.textContent='Scheduled: '+state.title;clock.textContent='Starts '+new Date(start).toLocaleTimeString();return;}label.textContent=state.title+(audio.paused?' — waiting for audio':' — playing');if(!armed||active===state.id||starting)return;starting=true;const id=state.id;try{audio.src=base+'music/'+encodeURIComponent(state.file);await audio.play();if(state.id!==id||Date.now()>=end){audio.pause();return;}active=id;label.textContent=state.title+' — playing';}catch{label.textContent='Select Enable session sound to play';}finally{starting=false;}}
+ setInterval(poll,3000);setInterval(tick,1000);poll();
+})();
