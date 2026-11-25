@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AncesTale — The Kiehlbauch-Beck Branch</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101d25;color:#f5ebd5;font:16px/1.55 system-ui,sans-serif;min-height:100vh}
+.art{position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,#a8c8e0,#7fa050 70%,#5d7f3c)}
+body[data-area="colony"] .art{background:linear-gradient(180deg,#e0d090,#b3a45e 60%,#8a7a4a)}
+body[data-area="port"] .art{background:repeating-linear-gradient(180deg,#8fa8b5 0 18px,#6e8a9a 18px 36px)}
+body[data-area="ocean"] .art{background:repeating-linear-gradient(180deg,#274b66 0 14px,#2e5f7a 14px 28px)}
+body[data-area="prairie"] .art{background:radial-gradient(circle at 70% 18%,#f2d98c 0 10%,transparent 42%),linear-gradient(180deg,#a8c8e0,#7fa050 70%,#5d7f3c)}
+.veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(0deg,#0c161bcc,transparent 60%)}
+.clouds{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.cloud{position:absolute;background:radial-gradient(closest-side,#ffffffd9,transparent);border-radius:50%;filter:blur(6px);animation:drift linear infinite}
+.cloud.c1{top:10%;width:38vmin;height:12vmin;opacity:.32;animation-duration:70s}
+.cloud.c2{top:28%;width:30vmin;height:10vmin;opacity:.22;animation-duration:95s;animation-delay:-45s}
+.cloud.c3{top:55%;width:44vmin;height:13vmin;opacity:.18;animation-duration:120s;animation-delay:-80s}
+@keyframes drift{from{left:-45vmin}to{left:110vw}}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 4vw;gap:10px;flex-wrap:wrap}
+.brand{font:600 22px Georgia;letter-spacing:.08em}
+#muteBtn{background:#233b40;color:#f7e8c7;border:1px solid #a6b5a1;border-radius:7px;padding:8px 14px;cursor:pointer;font:inherit}
+main{max-width:760px;padding:3vh 4vw 8vh}
+h1{font:600 clamp(30px,5vw,54px)/1.08 Georgia;margin:10px 0 14px}
+h2{font:600 clamp(24px,3.4vw,40px)/1.12 Georgia;margin:8px 0 12px}
+p{max-width:64ch}
+article{background:#13272ce8;border:1px solid #b9ae7d66;border-radius:12px;padding:20px 24px;box-shadow:0 20px 50px #0005}
+.eyebrow{font:600 12px system-ui;letter-spacing:.16em;text-transform:uppercase;color:#edcf93}
+.fact{color:#cfe3c8}.fiction{color:#e8d9b0;font-style:italic}
+.tag{font-size:12px;letter-spacing:.08em;color:#d8c9a3}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button{font:inherit;cursor:pointer;background:#e4c993;color:#192c30;border:0;padding:12px 19px;border-radius:7px;font-weight:650}
+button.secondary{background:#233b40;color:#f7e8c7;border:1px solid #a6b5a1}
+button:focus-visible{outline:3px solid white;outline-offset:3px}
+details{margin-top:14px;font-size:14px;color:#cfd8d2}
+.choices button{display:block;width:100%;text-align:left;margin-top:8px;background:#233b40;color:#f7e8c7;border:1px solid #a6b5a1}
+#status{font-size:14px;color:#edcf93;min-height:1.2em}
+#scene3d{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;border-radius:0;background:#0e2a33}
+header,main{position:relative;z-index:1}
+#game article{background:transparent;border:0;box-shadow:none;display:block}
+.textcol{margin-left:auto;width:min(46ch,92%);max-height:calc(100vh - 120px);overflow-y:auto;background:#13272cd9;border:1px solid #b9ae7d66;border-radius:12px;padding:16px 18px}
+.nextbranch{position:fixed;left:20px;bottom:20px;z-index:5;padding:13px 20px;border-radius:10px;background:#237b42;color:#fff;text-decoration:none;font-weight:650;border:2px solid #ffffff88}
+#sceneChoices{position:fixed;top:96px;left:96px;z-index:2;width:min(320px,42vw);background:#13272cd9;border:1px solid #b9ae7d66;border-radius:12px;padding:12px 14px}
+#sceneChoices .tag{margin:0 0 6px}
+@media (max-width:900px){#sceneChoices{top:70px;left:16px;width:min(280px,70vw)}}
+@media (max-width:900px){.textcol{width:100%}}
+</style>
+</head>
+<body>
+<div class="art"></div><div class="veil"></div><div class="clouds"><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div></div>
+<header>
+  <div class="brand">AncesTale</div>
+  <button id="muteBtn" type="button" aria-label="Toggle music">Music: on</button>
+</header>
+<main>
+  <section id="intro">
+    <p class="eyebrow">Next branch unlocked</p>
+    <h1>The Kiehlbauch-Beck Branch</h1>
+    <article>
+      <p class="fact">Verified records: Amelia Kiehlbauch [TG472690], born 12 Jan 1880 in Tyndall, Bon Homme County, South Dakota, was the wife of Burke C. Maynard [TG239670]. Through her, the Maynard home connects to a family born in the Black Sea German colonies of Russia.</p>
+      <p class="fiction">(Imagined scene-setting) You stand at the edge of the prairie town of Tyndall and look west, toward the story of the Kiehlbauch and Beck families.</p>
+      <p id="status" role="status">Press Begin to start. Speech uses local browser voices when available; text is always shown.</p>
+      <div class="actions"><button id="beginBtn" type="button">Begin / Resume</button></div>
+    </article>
+  </section>
+
+  <section id="game" hidden>
+    <article>
+      <canvas id="scene3d" aria-label="Animated journey reconstruction: from the Black Sea German colonies near Odessa, across the Atlantic, to Chicago and the South Dakota prairie. Walk with arrow keys or WASD, or click the ground to walk there. Fictional scenery; the names and dates in the text come from signed records."></canvas>
+      <div class="textcol">
+      <p class="tag">3D scenery is an original fictional reconstruction; verified facts are in the text. Choose a path to travel to the next place.</p>
+      <p class="eyebrow" id="sceneEyebrow"></p>
+      <h2 id="sceneTitle"></h2>
+      <p id="sceneText"></p>
+      <p class="tag" id="sceneTag"></p>
+      <div class="choices" id="sceneChoices"></div>
+      <div id="narrBox"></div>
+      </div>
+    </article>
+    <details id="factsBox"><summary>Verified facts and sources (public)</summary><div id="factsList"></div></details>
+  </section>
+</main>
+<script defer src="/nov-game/narration.js"></script>
+<script defer src="/nov-game/voice-setup.js"></script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const audio=new Audio();let muted=false,started=false,sceneIdx=0;
+document.body.dataset.area='colony';
+const TRACK='/nov-game/music/'+encodeURIComponent('A_Tale_of_Distant_Lands.mp3');
+const CHIME='/nov-game/chime.wav';
+const SCENES=[
+ {eyebrow:'Scene 1 — The colony',title:'Neuberg, Kherson, early 1800s',
+  text:'Joseph Sr Kiehlbauch [TG453802] was born 22 Jan 1826 in Neuberg, Cherson Province, in the New Odessa district of Russia, and Johanna Knoepfle [TG171824] was born 25 Jul 1824 in the nearby colony of Alexanderhilf, Grossliebental district. These were Black Sea German farming colonies near Odessa.',
+  tag:'Verified: signed records TG453802, TG171824. Context: Wikipedia, "Black Sea Germans"; NDSU GRHC, "Germans from Odessa" exhibit.',
+  choices:['Walk to the Odessa road','Stay in the colony']},
+ {eyebrow:'Scene 2 — The port',title:'Odessa, mid-1800s',
+  text:'Barbara Maier/Beck [TG513452] died 11 Jun 1856 in Odessa. Her daughter-in-law line continued through Constantin Beck [TG268612] (born 16 May 1812 in Wuerttemberg, Germany; died 4 Aug 1857 in Lustdorf, Odessa) and his wife, and through Barbara Beck [TG835097], born 22 Jan 1850 in Lustdorf, Russia. Many Russian Germans left for North America from the 1870s, embarking at Bremen or Hamburg.',
+  tag:'Verified: signed records TG513452, TG268612, TG835097. Context: FamilySearch, "Germans from Russia: Emigration and Immigration"; Wikipedia, "Emigration from Germany" statistics.',
+  choices:['Board the steamship at Bremen/Hamburg','Follow the wagon road north']},
+ {eyebrow:'Scene 3 — The crossing',title:'Atlantic to New York, then rail west',
+  text:'Josef Kiehlbauch [TG274361], son of Joseph Sr and Johanna, was born 1 Jan 1850 in Neuberg, Russia. He married Barbara Beck, and their daughter Amelia was born later in South Dakota. Josef died 14 Sep 1908 in Chicago, Cook County, Illinois — a rail hub on the way west. The exact ship and manifest for this family have not been found, and are not claimed here.',
+  tag:'Verified: signed record TG274361 (and TG835097, TG472690). Tentative/not established: exact Neuberg village; ship and manifest; reason for the Chicago death.',
+  choices:['Ride the rails to Chicago','Continue west to Dakota Territory']},
+ {eyebrow:'Scene 4 — The prairie home',title:'Tyndall, Bon Homme County, South Dakota',
+  text:'Joseph Sr Kiehlbauch died 29 May 1902 in Tyndall, Bon Homme County, South Dakota. Barbara Beck died there 15 Jul 1923. Their granddaughter Amelia Kiehlbauch [TG472690] was born in Tyndall on 12 Jan 1880 and died 29 Aug 1969 in Fresno, California. She married Burke C. Maynard [TG239670] — the link back to the branch you already explored. Black Sea German settlements in Bon Homme County included Avon, Scotland, and Tyndall.',
+  tag:'Verified: signed records TG453802, TG835097, TG472690, TG239670. Context: SD Historical Society 1909 report; GRHC/NDSU 2023.',
+  choices:['Return toward the Maynard home (end of branch)','Look at the facts and sources']}
+];
+const FACTS=[
+ 'Joseph Sr Kiehlbauch [TG453802]: b. 22 Jan 1826 Neuberg, Cherson Prov., New Odessa, Russia; d. 29 May 1902 Tyndall, Bon Homme Co., SD, USA',
+ 'Johanna Knoepfle [TG171824]: b. 25 Jul 1824 Alexanderhilf, Grossliebental District, Odessa, Russia; d. 21 Apr 1910 Medina, Stutsman Co., ND, USA',
+ 'Constantin Beck [TG268612]: b. 16 May 1812 Wuerttemberg, Germany; d. 4 Aug 1857 Lustdorf, Odessa',
+ 'Barbara Maier/Beck [TG513452]: b. 18 May 1811; d. 11 Jun 1856 Odessa, Kherson, Russia',
+ 'Barbara Beck [TG835097]: b. 22 Jan 1850 Lustdorf, Russia; d. 15 Jul 1923 Tyndall, Bon Homme Co., SD, USA',
+ 'Josef Kiehlbauch [TG274361]: b. 1 Jan 1850 Neuberg, Russia; d. 14 Sep 1908 Chicago, Cook Co., IL, USA',
+ 'Amelia Kiehlbauch [TG472690]: b. 12 Jan 1880 Tyndall, Bon Homme Co., SD, USA; d. 29 Aug 1969 Fresno, CA, USA; wife of Burke C. Maynard [TG239670]; mother of Amelia B Hetdke [TG984215]',
+ 'Sources (APA): Wikipedia, Black Sea Germans — https://en.wikipedia.org/wiki/Black_Sea_Germans ; NDSU GRHC, Germans from Odessa exhibit — https://library.ndsu.edu/grhc/sites/default/files/image-directory/Collections-Exhibits-GermansfromOdessa.pdf ; FamilySearch, Germans from Russia: Emigration and immigration — https://www.familysearch.org/en/wiki/Germans_from_Russia_Emigration_and_Immigration ; South Dakota Historical Society (1909), South Dakota History 11(3) — https://www.sdhspress.com/journal/south-dakota-history-11-3/a-1909-report-on-russian-german-settlements-in-southern-dakota/vol-11-no-3-a-1909-report-on-russian-german-settlements-in-southern-dakota.pdf ; GRHC/NDSU (2023), In Touch with Prairie Living — https://library.ndsu.edu/grhc/outreach/news/touch-prairie-living-june-2023',
+ 'Not established (not presented as fact): exact modern village for Neuberg; specific ship/manifest; why Josef died in Chicago.'
+];
+function play(url){if(muted)return;audio.src=url;audio.loop=false;audio.play().then(()=>{}).catch(()=>{$('status').textContent='Music could not start (browser blocked it). Text continues.';});}
+function show(i){
+  sceneIdx=i;const s=SCENES[i];
+  if(window.AncesTaleScene3D)window.AncesTaleScene3D.travelTo([0,1,2,4][i]!==undefined?[0,1,2,4][i]:i);
+  document.body.dataset.area=['colony','port','ocean','prairie'][i]||'prairie';
+  $('sceneEyebrow').textContent=s.eyebrow;$('sceneTitle').textContent=s.title;$('sceneText').textContent=s.text;$('sceneTag').textContent=s.tag;
+  const box=$('sceneChoices');box.innerHTML='';
+  if(i===0){const hint=document.createElement('p');hint.className='tag';hint.textContent='Choose a path below — the 3D scene flies there:';box.append(hint);}
+  s.choices.forEach((c,n)=>{const b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=()=>{const next=Math.min(i+1,SCENES.length-1);if(i===SCENES.length-1){end();}else show(next);};box.append(b);});
+  if(window.AncesTaleVoice){AncesTaleVoice.scene(s.title,s.text,s.choices,'historic');}
+}
+function end(){
+  $('sceneEyebrow').textContent='Branch complete';$('sceneTitle').textContent='Back at the family crossroads';
+  $('sceneText').textContent='You have reached the end of the Kiehlbauch-Beck branch. Every name and date above comes from the verified signed records or cited public sources; anything imagined is labeled as such. Use "Explore the Next Branch" on the launch page to return to the current game.';
+  $('sceneTag').textContent='Verified anchors: TG472690, TG274361, TG835097, TG453802, TG171824, TG268612, TG513452, TG239670.';
+  if(window.AncesTaleVoice){AncesTaleVoice.stop();}
+  play(CHIME);
+  $('sceneText').textContent+=' Taking you to the quiz…';
+  if(window.AncesTaleVoice){AncesTaleVoice.scene('Back at the family crossroads',$('sceneText').textContent,[],'historic');}
+  setTimeout(()=>{location.href='/quiz.html';},1500);
+}
+$('beginBtn').onclick=()=>{
+  $('intro').hidden=true;$('game').hidden=false;
+  if(!started){started=true;play(TRACK);}
+  if(window.AncesTaleVoice){AncesTaleVoice.controls($('narrBox'),audio);AncesTaleVoice.scene('The Kiehlbauch-Beck Branch','A new branch of the family tree, from the Black Sea colonies of Russia to the prairie of South Dakota.',SCENES[0].choices,'historic');}
+  show(0);
+};
+$('muteBtn').onclick=()=>{muted=!muted;audio.muted=muted;$('muteBtn').textContent=muted?'Music: off':'Music: on';};
+$('factsList').innerHTML=FACTS.map(f=>'<p>'+f+'</p>').join('');
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&window.AncesTaleVoice)AncesTaleVoice.stop();});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',async()=>{
+  if(!window.AncesTaleVoiceSetup)return;
+  const [config,clips]=await Promise.all([
+    fetch('/nov-game/voice-clips/config.json',{cache:'no-store'}).then(r=>r.ok?r.json():null),
+    fetch('/nov-game/voice-clips/clips.json',{cache:'no-store'}).then(r=>r.ok?r.json():null)
+  ]);
+  if(!config||!clips)return;
+  const btn=document.getElementById('beginBtn');const orig=btn.onclick;let mounted=false;
+  btn.onclick=async()=>{
+    if(mounted){orig();return;}
+    mounted=true;
+    await window.AncesTaleVoiceSetup({parent:document.getElementById('intro'),config,clips,
+      onReady:()=>{orig();},
+      onReading:()=>{orig();},
+      onEnd:()=>{document.getElementById('game').hidden=true;document.getElementById('intro').hidden=false;},
+      stopGameAudio:()=>{if(window.AncesTaleVoice)window.AncesTaleVoice.stop();}
+    });
+  };
+});
+</script>
+<script type="importmap">{"imports":{"three":"/nov-game/three.module.js"}}</script>
+<script type="module" src="/nov-game/scene3d.js"></script>
+<script defer src="/nov-game/session.js"></script>
+<a class="nextbranch" href="/">Explore the next branch</a>
+</body>
+</html>

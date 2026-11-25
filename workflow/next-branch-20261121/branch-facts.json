@@ -1,0 +1,36 @@
+{
+  "branch": "The Six Ancestral Roads (next-branch-20261121)",
+  "prepared": "2026-11-21",
+  "basis": "signed-records-20261121-075603-743.json + pedigree-template-20261121-075603-743.json + 2026-11-21 web research (priority-branch-sources-20261121.md) + ResearchNodeNetwork export network-20261121-080404.json",
+  "content_counts": "6 destinations, 28 scenes, 36 imagined dialogue lines, 7 activities (incl. original mini text-adventure), 10 single-shot music cues with 12 credit lines, animated canvas scenery per destination, AncesTaleVoice TTS wired; 20 verified fact entries, 16 APA source groups, 7 tentative items",
+  "privacy": "No protected relationship-layer labels used; no records of persons born in restricted years shown; no player data; nothing published. Imagined material is explicitly labelled fiction in the page.",
+  "verified_signed_records": [
+    {"name": "Edward Mccabe", "tg": "TG307645", "fact": "b. Mar 1861 Scotland; parents James McCabe [TG654147] + Mary [TG812186] (Ireland); 1900 US Census Pittsburgh Ward 35, Allegheny Co., PA; wife Sarah McAvoy; son John McCabe. Death year 1900 PA tentative (alive in 1900 census)."},
+    {"name": "Sarah McAvoy", "tg": "TG918273", "fact": "b. 13 Apr 1862 Derwent Street, Cockermouth, Cumberland, England (birthplace tentative); d. 1934 PA; parents James McAvoy [TG891052] + Rosamund Sloan [TG540918] (both Scott, Allegheny Co., PA)."},
+    {"name": "John McCabe", "tg": "TG628417", "fact": "b. 9 Feb 1896 Allegheny County, Pittsburgh, PA; d. Aug 1982 Chestnut Ridge Cemetery, Eldersville, Washington Co., PA."},
+    {"name": "James Elliott", "tg": "TG673245, TG749502", "fact": "b. Apr 1817 Somerset Co., PA; d. 1906 Butler Co., PA; mother Margaret Scott [TG771250]; son James N Elliott."},
+    {"name": "James N Elliott", "tg": "TG654890", "fact": "b. 12 Oct 1855 Center Twp, Butler Co., PA; d. 1 Nov 1926 Center, Butler, PA; wife Elizabeth McQuiston [TG270541]; daughter Alice S Elliott [TG492705]."},
+    {"name": "Elizabeth McQuiston", "tg": "TG270541", "fact": "b. 7 Jan 1887 PA; d. 27 Aug 1940 New Castle, Lawrence Co., PA; parents Charles McQuiston [TG804631] + Mary Thorpe [TG295740]."},
+    {"name": "Alice S Elliott", "tg": "TG492705", "fact": "b. 12 Jun 1906 Butler, PA; d. 24 Dec 1951 New Castle, PA."},
+    {"name": "Albert Franklin Smith", "tg": "TG839162", "fact": "b. 15 Mar 1862 Mattoon, Coles Co., IL; d. 20 Dec 1946 Fairlawn Burial Park, Hutchinson, Reno Co., KS; wife Rose Ann Prickett [TG501784]; son Archie T Smith."},
+    {"name": "Archie T Smith", "tg": "TG713289", "fact": "b. 21 Sep 1894 Greeley, Weld Co., CO; d. 8 May 1973 San Diego, CA (Smith DNA Project tree entry I99149)."},
+    {"name": "Polly Myrtle Bowman", "tg": "TG856134", "fact": "b. 18 May 1887 Morgan Co., IN; d. 24 Jun 1955 San Diego, CA; parents Thomas S Bowman [TG962430] + Nancy Jane Lambert [TG348671]; daughter Noma Vade Smith [TG315902]."},
+    {"name": "Percy W Shapley", "tg": "TG739123", "fact": "b. 6 May 1901 Floyd, Floyd Co., IA (birth tentative); d. 11 Sep 1946 Pasco, Franklin Co., WA; wife Minnie Schlorff [TG742018]."},
+    {"name": "Minnie Schlorff", "tg": "TG742018", "fact": "b. 1 Mar 1905 10920 Mackinaw Ave, Chicago, IL; d. 12 Apr 1946 Minneapolis, Hennepin Co., MN; parents William John Ludwig Sclorf [TG916000] + Mary Johannsen [TG324786]; m. Percy W Shapley 1924."},
+    {"name": "William R Maynard", "tg": "TG715094", "fact": "b. 13 Dec 1878 Dassel, Meeker Co., MN; d. 24 Nov 1958 Brooksville, Hernando Co., FL; parents George Maynard [TG859743] + Margaret Rose Sansom [TG502168]; wife Gail Agnes Hillman [TG286753]; son Burke C Maynard [TG239670]."},
+    {"name": "Gail Agnes Hillman", "tg": "TG286753", "fact": "b. 21 Sep 1884 Cannon Falls, Goodhue Co., MN; d. 12 Apr 1982 Saint Paul, Ramsey Co., MN; parents Fred Ernest Hillman [TG796320] + Agnes Maria Platt [TG148675]."},
+    {"name": "Burke C Maynard", "tg": "TG239670", "fact": "b. 11 Jun 1904 North Dakota; d. 5 Dec 1986 Morro Bay, San Luis Obispo Co., CA."},
+    {"name": "August Friedrich Hedtke", "tg": "TG923450", "fact": "b. 23 Aug 1847 Alt Paleschken, Kreis Berent, West Prussia; d. 31 Jan 1918 Henderson, Sibley Co., MN; wife Amelia Carolina Luedtke [TG610982]; son Robert R Hedtke [TG903148]."},
+    {"name": "Robert R Hedtke", "tg": "TG903148", "fact": "b. 18 Jan 1876 Sibley, MN (birth month tentative); d. 13 Feb 1954 Fresno, CA; wife Amelia Kiehlbauch [TG472690]; daughter Amelia B Hetdke [TG984215]."}
+  ],
+  "tentative_not_fact": [
+    "Edward Mccabe death year 1900 PA - tentative (1900 census shows him alive June 1900)",
+    "Sarah McAvoy birthplace Cockermouth vs Ireland/abt-1863 - tentative",
+    "Robert R Hedtke birth month Jan vs Jun 1876 - tentative",
+    "Percy W Shapley birth 6 May 1901 Floyd IA vs 1 Jan 1902 Iowa - tentative",
+    "Minnie Schlorff + Leland J Andrews (1943) - user-submitted only - tentative",
+    "Exact Neuberg village; specific ship/manifest - not found, no claim",
+    "Why Josef Kiehlbauch died in Chicago - unknown"
+  ],
+  "deployment": "LOCAL ONLY. Not deployed to the Pi; no SSH authorized this session. No git commit/push (requires owner approval of the reviewed package). No publication."
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AncesTale — Branch Quiz</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101d25;color:#f5ebd5;font:16px/1.55 system-ui,sans-serif;min-height:100vh}
+.art{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 70% 18%,#f2d98c 0 10%,transparent 42%),linear-gradient(180deg,#a8c8e0,#7fa050 70%,#5d7f3c)}
+.veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(0deg,#0c161bcc,transparent 60%)}
+main{max-width:760px;padding:4vh 4vw 12vh}
+h1{font:600 clamp(28px,4.5vw,44px)/1.1 Georgia;margin:10px 0 14px}
+article{background:#13272ce8;border:1px solid #b9ae7d66;border-radius:12px;padding:20px 24px;margin-top:16px}
+.eyebrow{font:600 12px system-ui;letter-spacing:.16em;text-transform:uppercase;color:#edcf93}
+.fact{color:#cfe3c8}
+button{font:inherit;cursor:pointer;background:#e4c993;color:#192c30;border:0;padding:12px 19px;border-radius:7px;font-weight:650;margin-top:8px}
+.choices button{display:block;width:100%;text-align:left;background:#233b40;color:#f7e8c7;border:1px solid #a6b5a1}
+.tag{font-size:12px;letter-spacing:.08em;color:#d8c9a3}
+.nextbranch{position:fixed;left:20px;bottom:20px;z-index:5;padding:13px 20px;border-radius:10px;background:#237b42;color:#fff;text-decoration:none;font-weight:650;border:2px solid #ffffff88}
+#verdict{font-weight:650;color:#edcf93;min-height:1.3em}
+</style>
+</head>
+<body>
+<div class="art"></div><div class="veil"></div>
+<main>
+  <p class="eyebrow">Kiehlbauch-Beck branch complete</p>
+  <h1>Branch Quiz</h1>
+  <p class="fact">Answer both activities to unlock the next page. All names and dates are from the verified signed records shown during the branch.</p>
+  <article id="a1">
+    <p class="eyebrow">Activity 1 — put the events in order (earliest first)</p>
+    <div class="choices" id="pick"></div>
+    <p class="fact" id="chosen"></p>
+    <button id="check" type="button">Check order</button>
+  </article>
+  <article id="a2">
+    <p class="eyebrow">Activity 2 — match the signed record</p>
+    <div id="qs"></div>
+  </article>
+  <p id="verdict" role="status"></p>
+</main>
+<a class="nextbranch" href="/">Explore the next branch</a>
+<script defer src="/nov-game/narration.js"></script>
+<script>
+'use strict';
+const speak=t=>{if(window.AncesTaleVoice)window.AncesTaleVoice.speak(t,'modern',true);};
+const $=id=>document.getElementById(id);
+const quiz={chrono:false,matches:0};
+const evs=[['Josef Kiehlbauch born in Neuberg — 1850',1850],['Barbara Maier/Beck died in Odessa — 1856',1856],['Amelia Kiehlbauch born in Tyndall — 1880',1880],['Joseph Sr Kiehlbauch died in Tyndall — 1902',1902]];
+const pick=$('pick'),chosen=$('chosen'),check=$('check');const order=[];
+function render(){chosen.textContent=order.length?order.map(e=>e[0].split('— ')[1]).join(' → '):'Click the events in order.';}
+evs.slice().sort(()=>Math.random()-.5).forEach(e=>{
+  const b=document.createElement('button');b.type='button';b.textContent=e[0];
+  b.onclick=()=>{if(order.length<evs.length&&!b.disabled){order.push(e);b.disabled=true;render();}};
+  pick.append(b);
+});
+render();
+check.onclick=()=>{
+  const ok=order.length===evs.length&&order.every((e,i)=>i===0||order[i-1][1]<e[1]);
+  chosen.textContent=ok?'Correct — earliest to latest.':(order.length===evs.length?'Wrong order — reset and try again.':'');
+  if(chosen.textContent)speak(chosen.textContent);
+  if(ok){check.disabled=true;quiz.chrono=true;maybeDone();}
+  else{order.length=0;pick.querySelectorAll('button').forEach(b=>b.disabled=false);render();}
+};
+const qs=[['Which signed record is Burke C. Maynard?','Burke C. Maynard',['Burke C. Maynard','Amelia Kiehlbauch','Josef Kiehlbauch','Barbara Beck']],
+         ['Which signed record is Joseph Sr Kiehlbauch?','Joseph Sr Kiehlbauch',['Johanna Knoepfle','Joseph Sr Kiehlbauch','Constantin Beck','Barbara Maier/Beck']]];
+const qsBox=$('qs');
+qs.forEach(q=>{
+  const p=document.createElement('p');p.className='eyebrow';p.textContent=q[0];qsBox.append(p);
+  const row=document.createElement('div');row.className='choices';
+  q[2].forEach(opt=>{const b=document.createElement('button');b.type='button';b.textContent=opt;b.onclick=()=>{const c=opt===q[1];b.style.outline=c?'3px solid #237b42':'3px solid #b32938';if(c){quiz.matches++;maybeDone();}};row.append(b);});
+  qsBox.append(row);
+});
+window.addEventListener('DOMContentLoaded',()=>{speak('Branch Quiz. Answer both activities to unlock the next page. All names and dates are from the verified signed records shown during the branch.');speak('Activity 1 — put the events in order (earliest first)');speak('Activity 2 — match the signed record');});
+function maybeDone(){
+  if(!quiz.chrono||quiz.matches<2)return;
+  $('verdict').textContent='Both activities complete — taking you to the text adventure…';
+  speak('Both activities complete — taking you to the text adventure…');
+  setTimeout(()=>{location.href='/zork.html';},1500);
+}
+</script>
+</body>
+</html>

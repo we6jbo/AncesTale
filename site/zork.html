@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AncesTale — The Kiehlbauch-Beck Trail</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101d25;color:#f5ebd5;font:16px/1.55 system-ui,sans-serif;min-height:100vh}
+.art{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 70% 18%,#f2d98c 0 10%,transparent 42%),linear-gradient(180deg,#a8c8e0,#7fa050 70%,#5d7f3c)}
+.veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(0deg,#0c161bcc,transparent 60%)}
+main{max-width:760px;padding:4vh 4vw 12vh}
+h1{font:600 clamp(28px,4.5vw,44px)/1.1 Georgia;margin:10px 0 14px}
+article{background:#13272ce8;border:1px solid #b9ae7d66;border-radius:12px;padding:20px 24px}
+.eyebrow{font:600 12px system-ui;letter-spacing:.16em;text-transform:uppercase;color:#edcf93}
+.tag{font-size:12px;letter-spacing:.08em;color:#d8c9a3}
+.nextbranch{position:fixed;left:20px;bottom:20px;z-index:5;padding:13px 20px;border-radius:10px;background:#237b42;color:#fff;text-decoration:none;font-weight:650;border:2px solid #ffffff88}
+.zlog p{margin:.2em 0}
+.zroom{color:#edcf93;font-weight:700}
+.zin{color:#8fb8d8}
+.zwin{color:#9fd8a0;font-weight:650}
+body.mintext .zlog p{display:none!important}
+</style>
+</head>
+<body>
+<div class="art"></div><div class="veil"></div>
+<main>
+  <p class="eyebrow">Bonus adventure</p>
+  <h1>The Kiehlbauch-Beck Trail</h1>
+  <p class="tag">A tiny original text adventure — an homage to the verb-noun games described in "Sufficiently Educated". All content here is original.</p>
+  <div style="margin:8px 0"><button id="textBtn" type="button" style="background:#233b40;color:#f7e8c7;border:1px solid #a6b5a1;border-radius:7px;padding:8px 14px;font:inherit;cursor:pointer">Text: off</button></div><article id="zorkPanel"></article>
+</main>
+<a class="nextbranch" href="/">Explore the next branch</a>
+<script defer src="/nov-game/narration.js"></script>
+<script defer src="/nov-game/zorklike.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const tb=document.getElementById('textBtn');const tkey='ancestale-mintext-v1';const applyT=()=>{let off=true;try{off=localStorage.getItem(tkey)!=='on'}catch(e){}document.body.classList.toggle('mintext',off);tb.textContent=off?'Text: off':'Text: on'};tb.onclick=()=>{const off=document.body.classList.contains('mintext');try{localStorage.setItem(tkey,off?'on':'off')}catch(e){}applyT();if(window.AncesTaleVoice){try{AncesTaleVoice.speak(off?'Text on screen':'Long reads hidden; speech only','modern',true)}catch(e){}}};try{if(localStorage.getItem(tkey)!=='on')document.body.classList.add('mintext')}catch(e){}applyT();if(window.AncesTaleZork)window.AncesTaleZork.start(document.getElementById('zorkPanel'));
+});
+</script>
+</body>
+</html>

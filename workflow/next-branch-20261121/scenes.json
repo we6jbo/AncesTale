@@ -1,0 +1,1072 @@
+{
+ "schema": "ancestale.branch.v1",
+ "branch_id": "next-branch-20261121",
+ "title": "The Six Ancestral Roads",
+ "subtitle": "A long branch from the Maynard home: six destinations across two continents, every scene anchored to signed records. Imagined material is always labelled.",
+ "track": "/nov-game/music/A_Tale_of_Distant_Lands.mp3",
+ "chime": "/nov-game/chime.wav",
+ "destinations": [
+  {
+   "id": "pittsburgh",
+   "name": "Pittsburgh, Pennsylvania",
+   "blurb": "The McCabe-McAvoy road: Scotland and Ireland to Allegheny County."
+  },
+  {
+   "id": "butler",
+   "name": "Butler County, Pennsylvania",
+   "blurb": "The Elliott-McQuiston road: Center Township and New Castle, Pennsylvania."
+  },
+  {
+   "id": "sandiego",
+   "name": "San Diego, California",
+   "blurb": "The Smith-Bowman-Prickett road: Illinois to Colorado, Indiana to Greeley to San Diego."
+  },
+  {
+   "id": "iowa",
+   "name": "Floyd County, Iowa",
+   "blurb": "The Shapley-Schlorff road: New York and Michigan roots, Iowa, Chicago, Pasco and Minneapolis."
+  },
+  {
+   "id": "minnesota",
+   "name": "Dassel, Minnesota",
+   "blurb": "The Maynard-Hillman road: Kentucky to Meeker County, on to Florida and California."
+  },
+  {
+   "id": "prussia",
+   "name": "Paleschken, West Prussia",
+   "blurb": "The Hedtke-Luedtke road: Kreis Berent to Sibley County, Minnesota, to Fresno."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "intro",
+   "dest": null,
+   "eyebrow": "Next branch unlocked",
+   "title": "The Six Ancestral Roads",
+   "fact": "Every family in the signed tree arrived somewhere. This branch follows six roads out of the Maynard home: Pittsburgh, Butler County, San Diego, Floyd County Iowa, Dassel Minnesota, and Paleschken in West Prussia.",
+   "fiction": "(Imagined scene-setting) Six wagon roads leave the same farmyard at dawn. The names on the signposts are all in the signed records.",
+   "tag": "Branch structure grounded in signed-records-20261121-075603-743.json.",
+   "choices": [
+    {
+     "label": "Choose a road",
+     "to": "map"
+    }
+   ],
+   "discovery": "Six destinations are available from the road map.",
+   "music": "Ars_Niemo_-_Small_Talk_Build_IV.ogg",
+   "art": "prairie"
+  },
+  {
+   "id": "map",
+   "dest": null,
+   "eyebrow": "The road map",
+   "title": "Pick your first road",
+   "fact": "The destinations correspond to recorded life places of named ancestors in the signed tree.",
+   "fiction": "(Imagined) Dust, a compass, and six hand-painted signs.",
+   "tag": "Signed records; see facts list at the end of the branch.",
+   "choices": [
+    {
+     "label": "Pittsburgh, Pennsylvania (McCabe-McAvoy)",
+     "to": "pitt1"
+    },
+    {
+     "label": "Butler County, Pennsylvania (Elliott-McQuiston)",
+     "to": "butler1"
+    },
+    {
+     "label": "San Diego, California (Smith-Bowman-Prickett)",
+     "to": "sd1"
+    },
+    {
+     "label": "Floyd County, Iowa (Shapley-Schlorff)",
+     "to": "iowa1"
+    },
+    {
+     "label": "Dassel, Minnesota (Maynard-Hillman)",
+     "to": "mn1"
+    },
+    {
+     "label": "Paleschken, West Prussia (Hedtke-Luedtke)",
+     "to": "prussia1"
+    },
+    {
+     "label": "Activities and quizzes",
+     "to": "activities"
+    }
+   ],
+   "discovery": "The map scene itself is a hub: all six roads and the activity deck are reachable from here.",
+   "music": "A_Most_Joyous_Occasion_by_Brylie_Christopher_Oxley.ogg",
+   "art": "prairie"
+  },
+  {
+   "id": "pitt1",
+   "dest": "pittsburgh",
+   "eyebrow": "Pittsburgh — Scene 1",
+   "title": "Scotland to Allegheny County",
+   "fact": "Edward Mccabe [TG307645] was born in March 1861 in Scotland. His parents were James McCabe [TG654147], born about 1840 in Ireland, and Mary [TG812186], born about 1844 in Ireland. The 1900 U.S. Census places an Edward McCabe in Pittsburgh Ward 35, Allegheny County, Pennsylvania.",
+   "fiction": "(Imagined) A ship's manifest chalked on a dock board: Glasgow to the Allegheny.",
+   "tag": "Verified: signed records TG307645, TG654147, TG812186; WikiTree Mccabe-2780 (1900 census, Pittsburgh Ward 35). Tentative: exact death year (signed record says 1900 PA; the 1900 census shows him alive in June 1900).",
+   "choices": [
+    {
+     "label": "Cross to England",
+     "to": "pitt2"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "The McCabe line left Ireland and Scotland for Pittsburgh's steel towns.",
+   "music": "After_You.wav",
+   "art": "mill"
+  },
+  {
+   "id": "pitt2",
+   "dest": "pittsburgh",
+   "eyebrow": "Pittsburgh — Scene 2",
+   "title": "Cockermouth and the McAvoy line",
+   "fact": "Sarah McAvoy [TG918273] was born 13 April 1862 in Derwent Street, Cockermouth, Cumberland, England, and died in 1934 in Pennsylvania. Her parents were James McAvoy [TG891052], born 17 March 1833 in Ireland and died 24 October 1906 in Scott, Allegheny County, PA, and Rosamund Sloan [TG540918], born 1838 in Ireland and died 10 November 1912 in Scott, Allegheny County, PA.",
+   "fiction": "(Imagined) Two rivers: the Derwent in Cumberland and the Allegheny in Pittsburgh, drawn on one map.",
+   "tag": "Verified: signed records TG918273, TG891052, TG540918. Tentative: one secondary source gives Sarah's birthplace as Ireland and her birth year as about 1863 (WikiTree Mc_Avoy-353); the signed record says Cockermouth, England, 1862.",
+   "choices": [
+    {
+     "label": "Meet the McAvoy grandparents",
+     "to": "pitt3"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "Sarah McAvoy married Edward Mccabe; both families landed in the same Scott/Allegheny area of Pennsylvania.",
+   "music": null,
+   "art": "mill"
+  },
+  {
+   "id": "pitt3",
+   "dest": "pittsburgh",
+   "eyebrow": "Pittsburgh — Scene 3",
+   "title": "County Down roots",
+   "fact": "Sarah's maternal grandparents were John Sloan, born May 1820 in County Down, Ireland, died 1 August 1900 in Washington Township, Cambria County, PA, and Ann McGowan, born about 1822 in County Down, Ireland. Her paternal grandparents were Patrick McAvoy, born about 1797 in Ireland, and Mary Evett, born about 1797 in Newry, Ireland.",
+   "fiction": "(Imagined) A letter in two hands, Ulster and Cumberland, addressed to one Pittsburgh address.",
+   "tag": "Verified: signed records (persons 68-71: Patrick McAvoy, Mary Evett, John Sloan, Ann McGowan).",
+   "choices": [
+    {
+     "label": "Follow the son to 1896",
+     "to": "pitt4"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "The McAvoy and Sloan families both trace to County Down, Ireland, before Pennsylvania.",
+   "music": null,
+   "art": "mill"
+  },
+  {
+   "id": "pitt4",
+   "dest": "pittsburgh",
+   "eyebrow": "Pittsburgh — Scene 4",
+   "title": "John McCabe, 1896",
+   "fact": "John McCabe [TG628417], son of Edward Mccabe and Sarah McAvoy, was born 9 February 1896 in Allegheny County, Pittsburgh, PA, and died in August 1982 at Chestnut Ridge Cemetery, Eldersville, Washington County, Pennsylvania.",
+   "fiction": "(Imagined) A February snow on the Monongahela, and a birth registered that week.",
+   "tag": "Verified: signed record TG628417.",
+   "choices": [
+    {
+     "label": "Talk to a Pittsburgh local (imagined)",
+     "to": "dlg-pittsburgh"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    },
+    {
+     "label": "End of this road",
+     "to": "outro"
+    }
+   ],
+   "discovery": "John McCabe's 1896 Pittsburgh birth connects the McCabe-McAvoy marriage to the next generation in Pennsylvania.",
+   "music": null,
+   "art": "mill"
+  },
+  {
+   "id": "butler1",
+   "dest": "butler",
+   "eyebrow": "Butler County — Scene 1",
+   "title": "Somerset County, 1817",
+   "fact": "James Elliott [TG673245, TG749502] was born in April 1817 in Somerset County, Pennsylvania, and died in 1906 in Butler County, Pennsylvania. His parents were John Elliott and Margaret Scott [TG771250], born 10 February 1793 in Mercer, Franklin County, PA, died 1 April 1868 in Butler, Butler County, PA.",
+   "fiction": "(Imagined) A farm on the Conemaugh, counted in the 1820 census.",
+   "tag": "Verified: signed records TG673245/TG749502, TG771250, person 129 (John Elliott). Note: TG673245 is marked non-permanent in the registry.",
+   "choices": [
+    {
+     "label": "On to Center Township",
+     "to": "butler2"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "James Elliott moved his family from Somerset County to Butler County, Pennsylvania.",
+   "music": "Bankrupt_Bakery_-_01_-_One_Night.ogg",
+   "art": "farm"
+  },
+  {
+   "id": "butler2",
+   "dest": "butler",
+   "eyebrow": "Butler County — Scene 2",
+   "title": "James N Elliott, Center Township",
+   "fact": "James N Elliott [TG654890], son of James Elliott and Margaret Elliott [TG182976], was born 12 October 1855 in Center Township, Butler County, PA, and died 1 November 1926 in Center, Butler, Pennsylvania. He married Elizabeth McQuiston [TG270541].",
+   "fiction": "(Imagined) October frost on the Center Township fields.",
+   "tag": "Verified: signed record TG654890; Find a Grave memorial 222439556 and an Ancestry record corroborate the name and dates.",
+   "choices": [
+    {
+     "label": "Meet the McQuistons",
+     "to": "butler3"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "James N Elliott's Center Township dates (1855-1926) anchor the Elliott line in Butler County.",
+   "music": null,
+   "art": "farm"
+  },
+  {
+   "id": "butler3",
+   "dest": "butler",
+   "eyebrow": "Butler County — Scene 3",
+   "title": "The McQuiston family",
+   "fact": "Elizabeth McQuiston [TG270541] was born 7 January 1887 in Pennsylvania and died 27 August 1940 in New Castle, Lawrence County, PA. Her parents were Charles McQuiston [TG804631], born 25 March 1850 in Butler County, PA, died 31 July 1917 in Butler, PA, and Mary Thorpe [TG295740], born 27 January 1863 in Pennsylvania, died 30 May 1944 in New Castle, Lawrence County, PA. Charles's parents were Marshall McQuiston, born 23 November 1813 in Butler, PA, died 22 December 1872 in Butler County, and Rebecca Grannis, born 26 March 1819 in Massachusetts, died 31 October 1905 near Slippery Rock, Butler County, PA.",
+   "fiction": "(Imagined) A family Bible with the McQuiston name spelled three ways.",
+   "tag": "Verified: signed records TG270541, TG804631, TG295740, persons 76-77. Context: Mitchell (1937), The McQuiston, McCuiston and McQuesten Families, 1620-1937; gmccuistion.com.",
+   "choices": [
+    {
+     "label": "Alice S Elliott, 1906",
+     "to": "butler4"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "The McQuiston line has been documented since 1620; Mitchell's 1937 family history is the standard reference.",
+   "music": null,
+   "art": "farm"
+  },
+  {
+   "id": "butler4",
+   "dest": "butler",
+   "eyebrow": "Butler County — Scene 4",
+   "title": "New Castle, 1906-1951",
+   "fact": "Alice S Elliott [TG492705], daughter of James N Elliott and Elizabeth McQuiston, was born 12 June 1906 in Butler, PA, and died 24 December 1951 in New Castle, Pennsylvania.",
+   "fiction": "(Imagined) A Christmas Eve death registered in New Castle, 1951.",
+   "tag": "Verified: signed record TG492705; WikiTree profile Elliott-15069 corroborates.",
+   "choices": [
+    {
+     "label": "Talk to a Butler County local (imagined)",
+     "to": "dlg-butler"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    },
+    {
+     "label": "End of this road",
+     "to": "outro"
+    }
+   ],
+   "discovery": "Alice S Elliott's 1906 Butler birth and 1951 New Castle death close the Elliott-McQuiston road.",
+   "music": null,
+   "art": "farm"
+  },
+  {
+   "id": "sd1",
+   "dest": "sandiego",
+   "eyebrow": "San Diego road — Scene 1",
+   "title": "Mattoon and Braceville, 1862-1869",
+   "fact": "Albert Franklin Smith [TG839162] was born 15 March 1862 in Mattoon, Coles County, Illinois, and died 20 December 1946 at Fairlawn Burial Park, Hutchinson, Reno County, Kansas. He married Rose Ann Prickett [TG501784], born 30 July 1869 in Braceville, Grundy County, Illinois, died 28 October 1952 in Yuma, Yuma County, Colorado.",
+   "fiction": "(Imagined) A railroad timetable for the Wabash out of Mattoon.",
+   "tag": "Verified: signed records TG839162, TG501784; Find a Grave memorial 10143299 for Albert Franklin Smith.",
+   "choices": [
+    {
+     "label": "Follow the Smith parents west",
+     "to": "sd2"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "Albert Franklin Smith and Rose Ann Prickett were both born in Illinois in the 1860s.",
+   "music": "_FZ_Side_E_-_Trail__by_Disasterpeace.wav",
+   "art": "coast"
+  },
+  {
+   "id": "sd2",
+   "dest": "sandiego",
+   "eyebrow": "San Diego road — Scene 2",
+   "title": "Pittsburgh to Yuma: the grandparents",
+   "fact": "Albert's parents were John Isaac Smith, born 18 February 1821 in Pittsburgh, Allegheny County, PA, died 7 December 1916 in Wray, Yuma County, Colorado, and Ruanna Hamilton, born 27 July 1827 in Gnadenhutten, Tuscarawas County, Ohio, died 19 February 1908 in Monegaw Springs, St. Clair County, Missouri. Rose Ann's parents were Charles Prickett, born 16 October 1829 in Apakesha Grove, Champaign County, Ohio, died 10 July 1903 in Vernon, Yuma County, Colorado, and Adaline A Holderman, born 24 April 1835 in Marion County, Ohio, died 28 September 1918 in Yuma County, Colorado.",
+   "fiction": "(Imagined) Two covered wagons crossing at a Yuma County crossroads.",
+   "tag": "Verified: signed records persons 40-43 (John Isaac Smith, Ruanna Hamilton, Charles Prickett, Adaline A Holderman).",
+   "choices": [
+    {
+     "label": "Greeley, 1894",
+     "to": "sd3"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "Both sides of the Smith-Prickett marriage ended up in Yuma County, Colorado.",
+   "music": null,
+   "art": "coast"
+  },
+  {
+   "id": "sd3",
+   "dest": "sandiego",
+   "eyebrow": "San Diego road — Scene 3",
+   "title": "Archie T Smith and Myrtle Bowman",
+   "fact": "Archie T Smith [TG713289], son of Albert Franklin Smith and Rose Ann Prickett, was born 21 September 1894 in Greeley, Weld County, Colorado, and died 8 May 1973 in San Diego, San Diego County, California. He married Polly Myrtle Bowman [TG856134], born 18 May 1887 in Morgan County, Indiana, died 24 June 1955 in San Diego, California.",
+   "fiction": "(Imagined) A wedding in a Greeley church, 1910s; a drive west to San Diego later.",
+   "tag": "Verified: signed records TG713289, TG856134; Smith Official DNA Project tree entry (Greeley CO, d. 8 May 1973 San Diego); Ancestry public-tree record for Polly Myrtle Bowman (b. 18 May 1887 Morgan, IN; parents Thomas S Bowman, Nancy Jane Lambert); Find a Grave memorials 224035291 and 255313550.",
+   "choices": [
+    {
+     "label": "The Bowman-Lambert side",
+     "to": "sd4"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "Archie T Smith's Greeley birth and San Diego death were confirmed by the Smith DNA project tree.",
+   "music": null,
+   "art": "coast"
+  },
+  {
+   "id": "sd4",
+   "dest": "sandiego",
+   "eyebrow": "San Diego road — Scene 4",
+   "title": "Morgan County, Indiana and the next generation",
+   "fact": "Polly Myrtle Bowman's parents were Thomas S Bowman [TG962430], born February 1863 in Eminence, Morgan County, Indiana, died 1904, and Nancy Jane Lambert [TG348671], born 8 June 1864 in Morgan County, Indiana, died 5 November 1946 in Jefferson County, Indiana. Nancy's parents were Aaron Lorenzo Lambert [TG684510], born 13 October 1830 in Randolph, North Carolina, died 19 January 1910 in Morgan, Indiana, and Tabitha Ann Brown, born 10 August 1838 in Hall, Morgan County, Indiana, died 27 April 1915. Aaron's parents were Henry Ira Lambert, born 24 May 1796 in North Carolina, died 1868 in Hendricks County, Indiana, and Sarah 'Sally' M Craven, born 1809 in Randolph, North Carolina, died 27 January 1887 in Center Valley, Indiana. Archie and Myrtle's daughter was Noma Vade Smith [TG315902], born 19 March 1927 in San Diego, California, died 20 December 1991 in San Diego County, California.",
+   "fiction": "(Imagined) Sorghum fields in Morgan County, and later, Pacific air in San Diego.",
+   "tag": "Verified: signed records TG962430, TG348671, TG684510, TG315902, persons 44-45, 47, 92-93; Find a Grave memorial 10806355 for Aaron Lorenzo Lambert.",
+   "choices": [
+    {
+     "label": "Talk to a San Diego local (imagined)",
+     "to": "dlg-sandiego"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    },
+    {
+     "label": "End of this road",
+     "to": "outro"
+    }
+   ],
+   "discovery": "The Bowman-Lambert line runs from North Carolina through Indiana to San Diego.",
+   "music": null,
+   "art": "coast"
+  },
+  {
+   "id": "iowa1",
+   "dest": "iowa",
+   "eyebrow": "Iowa road — Scene 1",
+   "title": "New York and Michigan roots",
+   "fact": "Percy W Shapley [TG739123] was born 6 May 1901 in Floyd, Floyd County, Iowa, and died 11 September 1946 in Pasco, Franklin County, Washington. His father was William Shapley, born about 1798/1799 in Granville, Washington County, New York, died between 1861 and 1864 in Iowa, with Mary Rice, born February 1849 in Wisconsin. William's father was Patrick Henry Shapley, born 10 April 1846 in Emmett, Calhoun County, Michigan, with Clarissa Gridley, born about 1804 in New York.",
+   "fiction": "(Imagined) A sod house on the Floyd County prairie, 1901.",
+   "tag": "Verified: signed record TG739123 (death 11 Sep 1946 Pasco, Franklin Co. WA). Tentative: birth (signed record 6 May 1901 Floyd, IA; WikiTree Shapley line says 1 Jan 1902 Iowa).",
+   "choices": [
+    {
+     "label": "The Stafford side of Floyd County",
+     "to": "iowa2"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "The Shapley line reaches back to Granville, New York, and Emmett, Michigan.",
+   "music": "08_-_Kate_Orange_-_Virus_instrumental.mp3",
+   "art": "prairie"
+  },
+  {
+   "id": "iowa2",
+   "dest": "iowa",
+   "eyebrow": "Iowa road — Scene 2",
+   "title": "Calamus and Charles City",
+   "fact": "Percy's mother was Olive G Stafford [TG759401], born 30 April 1876 in Calamus, Dodge County... recorded as Calamus, Wisconsin, died 22 May 1946 in Charles City, Floyd County, Iowa. Her parents included Joseph W Stafford, born 1804 in New York, and Hulda Sylvah, born 1811 in Pennsylvania, died 1862 in Wisconsin; and Barton J Waite, born 1792 in New York, died 1862/1870 in Calamus, Dodge County, Wisconsin, with Susannah Clark Bacon, born 20 August 1790 in Randolph, Orange County, Vermont, died December 1870 in Lorain, Lorain County, Ohio. Alice Waite, born 27 November 1840 in Lorain, Lorain County, Ohio, died 4 July 1914 in Gardena, Bottineau County, North Dakota.",
+   "fiction": "(Imagined) The Cedar River at Charles City, where the Staffords settled.",
+   "tag": "Verified: signed records TG759401, persons 58-59, 113, 116-119.",
+   "choices": [
+    {
+     "label": "Chicago, 1905: Minnie Schlorff",
+     "to": "iowa3"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "The Stafford and Waite lines crossed from New York and Vermont through Wisconsin to Floyd County, Iowa.",
+   "music": null,
+   "art": "prairie"
+  },
+  {
+   "id": "iowa3",
+   "dest": "iowa",
+   "eyebrow": "Iowa road — Scene 3",
+   "title": "Minnie Schlorff, Chicago 1905",
+   "fact": "Minnie Schlorff [TG742018] was born 1 March 1905 at 10920 Mackinaw Avenue, Chicago, Cook County, Illinois, and died 12 April 1946 in Minneapolis, Hennepin County, Minnesota. Her parents were William John Ludwig Sclorf [TG916000], born 21 July 1867 in Pomerania, Prussia, died 1937 in Wisconsin, and Mary Johannsen [TG324786], born 28 November 1868 in Tondern, Schleswig-Holstein, Germany, died 1951 in Shawano County, Wisconsin. She married Percy W Shapley in 1924.",
+   "fiction": "(Imagined) A 1924 wedding license filed in Iowa, a Chicago address on the certificate.",
+   "tag": "Verified: signed records TG742018, TG916000, TG324786; Geneanet family tree (m. Percy W Shapley 1924); Reddit r/Genealogy and MyHeritage name records (b. 1 Mar 1905 Chicago, d. 12 Apr 1946 Minneapolis); Find a Grave memorial 239646934 (Minnie Schlorff Andrews). Tentative: later marriage to Leland J Andrews (1943) appears only in user-submitted sources.",
+   "choices": [
+    {
+     "label": "Pasco, 1946",
+     "to": "iowa4"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "Minnie Schlorff's Chicago birth and Minneapolis death are corroborated by multiple independent name-record sources.",
+   "music": null,
+   "art": "prairie"
+  },
+  {
+   "id": "iowa4",
+   "dest": "iowa",
+   "eyebrow": "Iowa road — Scene 4",
+   "title": "Pasco and Minneapolis, 1946",
+   "fact": "Percy W Shapley died 11 September 1946 in Pasco, Franklin County, Washington, and Minnie Schlorff died 12 April 1946 in Minneapolis, Hennepin County, Minnesota — the two ends of the Shapley-Schlorff road in 1946.",
+   "fiction": "(Imagined) Two towns, one spring, 1946: the Columbia River at Pasco, the Mississippi at Minneapolis.",
+   "tag": "Verified: signed records TG739123, TG742018; WikiTree Shapley line (d. 11 Sep 1946 Pasco, Franklin, WA).",
+   "choices": [
+    {
+     "label": "Talk to an Iowa local (imagined)",
+     "to": "dlg-iowa"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    },
+    {
+     "label": "End of this road",
+     "to": "outro"
+    }
+   ],
+   "discovery": "Both Percy Shapley and Minnie Schlorff died in 1946, months apart, in Washington and Minnesota.",
+   "music": null,
+   "art": "prairie"
+  },
+  {
+   "id": "mn1",
+   "dest": "minnesota",
+   "eyebrow": "Minnesota road — Scene 1",
+   "title": "Kentucky to Dassel",
+   "fact": "William R Maynard [TG715094] was born 13 December 1878 in Dassel, Meeker County, Minnesota, and died 24 November 1958 in Brooksville, Hernando County, Florida. His father was George Maynard [TG859743], born 27 August 1852 in Prestonsburg, Floyd County, Kentucky, died 2 May 1932 in Minot, Ward County, North Dakota. His mother was Margaret Rose Sansom [TG502168], born 11 February 1859 in Logan County, Kentucky, died 28 December 1928 in Rosehill, Covington, Alabama.",
+   "fiction": "(Imagined) A December birth in a Meeker County farmhouse, 1878.",
+   "tag": "Verified: signed records TG715094, TG859743, TG502168; Coastal Breeze News confirms William R Maynard's later life in Brooksville, FL; WikiTree Maynard-103 (George Maynard).",
+   "choices": [
+    {
+     "label": "The Maynard grandparents",
+     "to": "mn2"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "William R Maynard's parents both came from Kentucky — George from Floyd County, Margaret from Logan County.",
+   "music": "A_night_in_a_old_game_forest_-_Felipe_RuizBRX11.wav",
+   "art": "lake"
+  },
+  {
+   "id": "mn2",
+   "dest": "minnesota",
+   "eyebrow": "Minnesota road — Scene 2",
+   "title": "Pike County, Kentucky roots",
+   "fact": "George Maynard's parents were William Maynard, born 18 May 1830 in Pike County, Kentucky, died 25 March 1908 in Pierce County, Washington, and Sarah Parsons, born 9 August 1821 in Kentucky, died 14 March 1891 in Bertha, Todd County, Minnesota. The 1870 census shows William Maynard, age 40, a farmer and township supervisor in Dassel Township, Meeker County, Minnesota, living at Swan Lake with his wife Sarah, age 42. Margaret Rose Sansom's parents were Riley Sansom, born 10 February 1831 in Pike County, Kentucky, died 6 April 1905 in Riverside, Snohomish County, Washington, and Sarah Sally Kline, born 20 July 1836 in Glen Alum, Logan County, Virginia/West Virginia, died 6 September 1928 in Snohomish, Snohomish County, Washington.",
+   "fiction": "(Imagined) A township supervisor's ledger in Dassel, 1870.",
+   "tag": "Verified: signed records persons 96-99; WikiTree Maynard-162 (1870 census, Dassel Township, Meeker Co. MN; Find a Grave 158111098, Sumner Cemetery, Pierce Co. WA).",
+   "choices": [
+    {
+     "label": "Cannon Falls: the Hillmans",
+     "to": "mn3"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "William Maynard Sr. was already a Dassel Township supervisor by 1870 — the family was rooted in Meeker County.",
+   "music": null,
+   "art": "lake"
+  },
+  {
+   "id": "mn3",
+   "dest": "minnesota",
+   "eyebrow": "Minnesota road — Scene 3",
+   "title": "Gail Agnes Hillman of Cannon Falls",
+   "fact": "Gail Agnes Hillman [TG286753], William R Maynard's wife, was born 21 September 1884 in Cannon Falls, Goodhue County, Minnesota, and died 12 April 1982 in Saint Paul, Ramsey County, Minnesota. Her parents were Fred Ernest Hillman [TG796320], born 21 August 1857 in Minnesota, died 4 December 1950 at Bald Eagle Center, Cass County, Minnesota, and Agnes Maria Platt [TG148675], born 27 April 1857 in Palmyra, Jefferson County, Wisconsin, died 23 February 1946 in Ramsey County, Minnesota.",
+   "fiction": "(Imagined) The Cannon River at Cannon Falls, 1884.",
+   "tag": "Verified: signed records TG286753, TG796320, TG148675.",
+   "choices": [
+    {
+     "label": "Hillman and Platt grandparents",
+     "to": "mn4"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "Gail Agnes Hillman was born in Cannon Falls, Goodhue County, and died in Saint Paul, both in Minnesota.",
+   "music": null,
+   "art": "lake"
+  },
+  {
+   "id": "mn4",
+   "dest": "minnesota",
+   "eyebrow": "Minnesota road — Scene 4",
+   "title": "Massachusetts to Cannon Falls; North Dakota to Morro Bay",
+   "fact": "Fred Ernest Hillman's parents were Levi Colburn Hillman, born 25 January 1822 in Conway, Franklin County, Massachusetts, died 11 March 1861 in Randolph, Dakota Territory (Minnesota), and Mary Marinda Shelly, born 1830 in Connecticut, died 11 March 1897 in Randolph, Dakota County, MN. Agnes Maria Platt's parents were David C Platt [TG158342], born 16 May 1823 in Berne, Clinton County, New York, died 23 October 1904 in Cannon Falls, Goodhue County, MN, and Miranda McLane, born 12 March 1817 in Alburgh, Grand Isle County, Vermont, died 24 July 1861 in Werner, Juneau County, Wisconsin. William R Maynard and Gail Agnes Hillman's son was Burke C Maynard [TG239670], born 11 June 1904 in North Dakota, died 5 December 1986 in Morro Bay, San Luis Obispo County, California.",
+   "fiction": "(Imagined) From a Massachusetts hill farm to a Cannon Falls parlor; from Minot, North Dakota to the Morro Bay coast.",
+   "tag": "Verified: signed records TG239670, TG158342, persons 100-103; Find a Grave memorial 93464196 (Burke C Maynard); Find a Grave 81879786 (David C Platt); Find a Grave 91939608 (Fred Ernest Hillman); Find a Grave 87752705 (Agnes Maria Hillman).",
+   "choices": [
+    {
+     "label": "Talk to a Minnesota local (imagined)",
+     "to": "dlg-minnesota"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    },
+    {
+     "label": "End of this road",
+     "to": "outro"
+    }
+   ],
+   "discovery": "The Maynard-Hillman road runs Massachusetts -> Minnesota -> North Dakota -> Florida and California.",
+   "music": null,
+   "art": "lake"
+  },
+  {
+   "id": "prussia1",
+   "dest": "prussia",
+   "eyebrow": "Prussia road — Scene 1",
+   "title": "Paleschken, Kreis Berent, 1847",
+   "fact": "August Friedrich Hedtke [TG923450] was born 23 August 1847 in Alt Paleschken, Kreis Berent, Regierungsbezirk Danzig, West Prussia, and died 31 January 1918 in Henderson, Sibley County, Minnesota. He married Amelia Carolina Luedtke [TG610982], born February 1850 in Pomerania, Prussia, died 24 April 1925 in Henderson, Sibley County, Minnesota.",
+   "fiction": "(Imagined) A West Prussian village church register, 1847.",
+   "tag": "Verified: signed records TG923450, TG610982; Find a Grave memorial 75234154 (August F. Hedtke).",
+   "choices": [
+    {
+     "label": "The Hedtke grandparents",
+     "to": "prussia2"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "August Friedrich Hedtke and Amelia Carolina Luedtke both died in Henderson, Sibley County, Minnesota.",
+   "music": "Auferstehung_Hannover_Orgel_BWV_532.ogg",
+   "art": "snow"
+  },
+  {
+   "id": "prussia2",
+   "dest": "prussia",
+   "eyebrow": "Prussia road — Scene 2",
+   "title": "Johann and Florentine Hedtke",
+   "fact": "August Friedrich Hedtke's parents were Johann E Hedtke [TG842378], born 5 December 1819 in West Prussia, died 28 August 1894 in Chaska, Carver County, Minnesota, and Florentine Henriette Florence Hedtke [TG413360], born 31 July 1828 in Neu or Alt Paleschken, Berent, Danzig, West Prussia, died 18 February 1901 in Chaska, Carver County, Minnesota.",
+   "fiction": "(Imagined) Two Paleschken graves, and later two Chaska churchyard stones.",
+   "tag": "Verified: signed records TG842378, TG413360; Find a Grave memorial 54692058.",
+   "choices": [
+    {
+     "label": "Sibley County, 1876",
+     "to": "prussia3"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "The Hedtke line moved from Paleschken (West Prussia) to Chaska (Carver County, Minnesota).",
+   "music": null,
+   "art": "snow"
+  },
+  {
+   "id": "prussia3",
+   "dest": "prussia",
+   "eyebrow": "Prussia road — Scene 3",
+   "title": "Robert R Hedtke, Sibley, Minnesota",
+   "fact": "Robert R Hedtke [TG903148], son of August Friedrich Hedtke and Amelia Carolina Luedtke, was born 18 January 1876 in Sibley, Minnesota, and died 13 February 1954 in Fresno, California. He married Amelia Kiehlbauch [TG472690], the link back to the Kiehlbauch-Beck branch.",
+   "fiction": "(Imagined) A January birth on the Minnesota prairie, 1876.",
+   "tag": "Verified: signed record TG903148 (death 13 Feb 1954 Fresno, CA; Find a Grave 260875592). Tentative: birth month (signed record 18 Jan 1876; a FamilySearch-derived tree says June 1876, Sibley County, MN).",
+   "choices": [
+    {
+     "label": "Fresno, 1954; Morro Bay",
+     "to": "prussia4"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "Robert R Hedtke's Fresno death (13 Feb 1954) matches across the signed record and the FamilySearch-derived tree.",
+   "music": null,
+   "art": "snow"
+  },
+  {
+   "id": "prussia4",
+   "dest": "prussia",
+   "eyebrow": "Prussia road — Scene 4",
+   "title": "Amelia B Hetdke and the link to Fresno",
+   "fact": "Robert R Hedtke and Amelia Kiehlbauch's daughter was Amelia B Hetdke [TG984215], born 28 December 1904 in North Dakota, died 15 May 1979 in Morro Bay, San Luis Obispo County, California. Through Amelia Kiehlbauch, this road joins the Maynard home via Burke C Maynard [TG239670].",
+   "fiction": "(Imagined) A family photograph album passed from Tyndall to Fresno to Morro Bay.",
+   "tag": "Verified: signed records TG984215, TG472690, TG239670.",
+   "choices": [
+    {
+     "label": "Talk to a Prussia-to-Minnesota local (imagined)",
+     "to": "dlg-prussia"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    },
+    {
+     "label": "End of this road",
+     "to": "outro"
+    }
+   ],
+   "discovery": "Amelia B Hetdke (1904 North Dakota - 1979 Morro Bay) is the Hedtke-Maynard link in this generation.",
+   "music": null,
+   "art": "snow"
+  },
+  {
+   "id": "activities",
+   "dest": null,
+   "eyebrow": "Activity deck",
+   "title": "Six activities",
+   "fact": "Genealogy is also a skill: ordering events, matching records, comparing sources, and separating verified fact from tentative claims and imagination.",
+   "fiction": "(Imagined) A researcher's desk with six index cards.",
+   "tag": "Activities use only signed-record facts; every statement is classified somewhere in this branch.",
+   "choices": [
+    {
+     "label": "Activity 1: Timeline order",
+     "to": "act-order"
+    },
+    {
+     "label": "Activity 2: Match the record",
+     "to": "act-match"
+    },
+    {
+     "label": "Activity 3: Route the emigrants",
+     "to": "act-route"
+    },
+    {
+     "label": "Activity 4: Sort the sources",
+     "to": "act-sources"
+    },
+    {
+     "label": "Activity 5: Fact, tentative, or fiction?",
+     "to": "act-classify"
+    },
+    {
+     "label": "Activity 6: Talk at the Tyndall depot (imagined)",
+     "to": "act-talk"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    },
+    {
+     "label": "Activity 7: The Record Room (mini text adventure)",
+     "to": "act-spy"
+    }
+   ],
+   "discovery": "Six activities available; each checks itself and explains the answer.",
+   "music": "A_Tale_of_Distant_Lands.mp3",
+   "art": "prairie"
+  },
+  {
+   "id": "outro",
+   "dest": null,
+   "eyebrow": "End of branch",
+   "title": "Press Explore the Next Branch",
+   "fact": "All six roads are documented in the signed records; the tentative items are listed in the facts panel and are not presented as established.",
+   "fiction": "(Imagined) Six roads, one farmyard, dawn again.",
+   "tag": "See the facts and sources panel for the full verified list, APA sources, and tentative items.",
+   "choices": [
+    {
+     "label": "Return to the main game",
+     "to": "__main__"
+    },
+    {
+     "label": "Back to the map",
+     "to": "map"
+    }
+   ],
+   "discovery": "Branch complete: 6 destinations, 24 road scenes, 36 dialogue lines, 6 activities.",
+   "music": "90sec_EDITOR_wiki_loop_library_-_by_Andy_R._Jordan.wav",
+   "art": "prairie"
+  }
+ ],
+ "dialogues": {
+  "pittsburgh": [
+   {
+    "speaker": "A steelworker at the Allegheny mill (imagined)",
+    "lines": [
+     "\"You McCabes? Half the town came over from Down the same way.\"",
+     "\"My grandfather knew a Sloan in Washington Township, Cambria County.\"",
+     "\"1896 was a hard winter, but the mills were hiring.\""
+    ]
+   },
+   {
+    "speaker": "A church archivist in Scott, PA (imagined)",
+    "lines": [
+     "\"We have McAvoys buried here since the 1830s.\"",
+     "\"James McAvoy died here in 1906; Rosamund Sloan in 1912.\"",
+     "\"Ask the county courthouse for the 1900 census pages.\""
+    ]
+   }
+  ],
+  "butler": [
+   {
+    "speaker": "A farmer near Slippery Rock (imagined)",
+    "lines": [
+     "\"The McQuistons have farmed Butler County since before the war.\"",
+     "\"Marshall McQuiston died here in 1872; Rebecca Grannis in 1905.\"",
+     "\"Center Township keeps good records — ask for James N Elliott.\""
+    ]
+   },
+   {
+    "speaker": "A New Castle librarian (imagined)",
+    "lines": [
+     "\"Elizabeth McQuiston died here in 1940; her daughter Alice in 1951.\"",
+     "\"The McQuiston family history book goes back to 1620.\"",
+     "\"Lawrence County was split from Butler in 1849 — check both.\""
+    ]
+   }
+  ],
+  "sandiego": [
+   {
+    "speaker": "A Greeley livery keeper (imagined)",
+    "lines": [
+     "\"Archie Smith was born here in 1894, right before the blizzard.\"",
+     "\"The Bowmans came through from Indiana — Morgan County.\"",
+     "\"Folks here drove west to San Diego after the war.\""
+    ]
+   },
+   {
+    "speaker": "A San Diego archivist (imagined)",
+    "lines": [
+     "\"Myrtle Smith died here in 1955; her daughter Noma in 1991.\"",
+     "\"The Lambert family papers mention Aaron Lorenzo Lambert of North Carolina.\"",
+     "\"Check the Smith DNA project for the Greeley line.\""
+    ]
+   }
+  ],
+  "iowa": [
+   {
+    "speaker": "A Charles City shopkeeper (imagined)",
+    "lines": [
+     "\"Olive Stafford died here in 1946 — the whole county knew her.\"",
+     "\"The Shapleys came from New York Dutch country.\"",
+     "\"Floyd County was named for the river, not the governor — mostly.\""
+    ]
+   },
+   {
+    "speaker": "A Minneapolis undertaker's clerk (imagined)",
+    "lines": [
+     "\"Minnie Schlorff, died April 1946, Mackinaw Avenue girl.\"",
+     "\"Her husband Percy died that September out in Pasco, Washington.\"",
+     "\"The Schlorffs came from Pomerania via Chicago.\""
+    ]
+   }
+  ],
+  "minnesota": [
+   {
+    "speaker": "A Dassel township clerk (imagined)",
+    "lines": [
+     "\"William Maynard was supervisor here in 1870 — see the census.\"",
+     "\"His son William R was born in Dassel in 1878.\"",
+     "\"The Maynards came up from Kentucky — Pike County.\""
+    ]
+   },
+   {
+    "speaker": "A Cannon Falls newspaper editor (imagined)",
+    "lines": [
+     "\"Gail Hillman was born here in 1884; the Platt family were early settlers.\"",
+     "\"David C Platt died here in 1904 — big obituary.\"",
+     "\"The Hillmans trace to Conway, Massachusetts.\""
+    ]
+   }
+  ],
+  "prussia": [
+   {
+    "speaker": "A Chaska church elder (imagined)",
+    "lines": [
+     "\"The Hedtke families came from Paleschken in Berent, West Prussia.\"",
+     "\"Johann Hedtke died here in 1894; Florentine in 1901.\"",
+     "\"August Friedrich Hedtke died in Henderson in 1918.\""
+    ]
+   },
+   {
+    "speaker": "A Henderson, MN centenarian (imagined)",
+    "lines": [
+     "\"Robert Hedtke was born in Sibley in 1876 and died in Fresno in 1954.\"",
+     "\"He married a Kiehlbauch girl from Tyndall, South Dakota.\"",
+     "\"Their daughter Amelia was born in North Dakota in 1904.\""
+    ]
+   }
+  ]
+ },
+ "activities": [
+  {
+   "id": "act-order",
+   "type": "order",
+   "title": "Timeline order",
+   "instructions": "Click the six events in chronological order, then Check.",
+   "items": [
+    "Josef Kiehlbauch born in Neuberg, Russia (1850)",
+    "Barbara Maier/Beck dies in Odessa (1856)",
+    "Robert R Hedtke born in Sibley, MN (1876)",
+    "Amelia Kiehlbauch born in Tyndall, SD (1880)",
+    "Josef Kiehlbauch dies in Chicago (1908)",
+    "Robert R Hedtke dies in Fresno, CA (1954)"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "id": "act-match",
+   "type": "match",
+   "title": "Match the record",
+   "instructions": "Match each person to their signed TG identifier.",
+   "pairs": [
+    [
+     "Edward Mccabe",
+     "TG307645"
+    ],
+    [
+     "Amelia Kiehlbauch",
+     "TG472690"
+    ],
+    [
+     "Archie T Smith",
+     "TG713289"
+    ],
+    [
+     "Polly Myrtle Bowman",
+     "TG856134"
+    ]
+   ],
+   "options": [
+    "TG307645",
+    "TG472690",
+    "TG713289",
+    "TG856134",
+    "TG999999"
+   ]
+  },
+  {
+   "id": "act-route",
+   "type": "quiz",
+   "title": "Route the emigrants",
+   "instructions": "Which route did Black Sea German families such as the Kiehlbauchs generally take to South Dakota?",
+   "question": "Best-supported route from the Odessa colonies to Tyndall, SD:",
+   "options": [
+    "Odessa -> steamship via Bremen/Hamburg -> New York -> rail west via Chicago -> Dakota Territory",
+    "Odessa -> overland wagon straight across Canada",
+    "Odessa -> Ellis Island -> direct steamer to San Francisco -> wagon east",
+    "Odessa -> London -> Halifax -> Montreal -> wagon south"
+   ],
+   "answer": 0,
+   "explain": "FamilySearch and the AHSGR passenger-list guides document Bremen/Hamburg departures and rail travel west; the SD Historical Society 1909 report describes arrivals via rail to Yankton. Exact ship/manifest for this family: not found."
+  },
+  {
+   "id": "act-sources",
+   "type": "quiz",
+   "title": "Sort the sources",
+   "instructions": "One question about evidence quality.",
+   "question": "Which of these is the strongest evidence for a birth date in this branch?",
+   "options": [
+    "A signed HVZA record with a permanent TG identifier",
+    "A Wikipedia article",
+    "A user-submitted Find a Grave memorial alone",
+    "An imagined scene in this game"
+   ],
+   "answer": 0,
+   "explain": "Signed records with permanent TG codes are the project's primary layer; Wikipedia and user memorials are contextual or tentative; game scenes labelled imagined are fiction."
+  },
+  {
+   "id": "act-classify",
+   "type": "classify",
+   "title": "Fact, tentative, or fiction?",
+   "instructions": "Classify each statement.",
+   "statements": [
+    "Amelia Kiehlbauch was born 12 Jan 1880 in Tyndall, Bon Homme County, SD [TG472690]",
+    "The exact ship that carried Josef Kiehlbauch to America",
+    "A steelworker in Pittsburgh says the McCabes 'all came from Down'",
+    "Robert R Hedtke was born in June 1876 (FamilySearch-derived tree) vs 18 Jan 1876 (signed record)",
+    "Sarah McAvoy was born in Cockermouth, England (signed record) vs Ireland (one secondary source)",
+    "Edward Mccabe died in 1900 in Pennsylvania (signed record), though the 1900 census lists him"
+   ],
+   "classes": [
+    "Verified fact",
+    "Not established / tentative",
+    "Imagined dialogue"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "act-talk",
+   "type": "talk",
+   "title": "Talk at the Tyndall depot (imagined)",
+   "instructions": "A short imagined conversation with a depot agent in Tyndall, SD. This dialogue is fiction and labelled as such.",
+   "speaker": "Depot agent, Tyndall SD (imagined)",
+   "exchanges": [
+    {
+     "you": "Any Kiehlbauchs passing through?",
+     "them": "Joseph Kiehlbauch's family ran the farm outside town — he himself died in Chicago in 1908."
+    },
+    {
+     "you": "And the Becks?",
+     "them": "Barbara Beck is buried here — died 1923. Her father Constantin died out in Lustdorf before the crossing."
+    },
+    {
+     "you": "Who married into the Maynards?",
+     "them": "Amelia Kiehlbauch, born here in 1880, married Burke Maynard. Their daughter Amelia went to North Dakota, then California."
+    }
+   ]
+  },
+  {
+   "id": "act-spy",
+   "type": "adventure",
+   "title": "The Record Room (mini text adventure)",
+   "instructions": "Type commands like: look, take card, read card, decode word, unlock drawer, open drawer. Original puzzle inspired by reading themes (spy kits, code words, ordered puzzles, verb-noun text adventures) from Sufficiently Educated via TextWarden read-only search; no book text or Zork assets reproduced.",
+   "intro": "You are in the family record room. A locked drawer holds a record card. On the desk: an inkwell, a cipher card, and a brass key.",
+   "verbs": [
+    "look",
+    "take",
+    "read",
+    "decode",
+    "unlock",
+    "open",
+    "use",
+    "go",
+    "help"
+   ],
+   "steps": [
+    {
+     "cmd": "look",
+     "resp": "Desk: inkwell, cipher card, brass key. Locked drawer. Door east to the hall."
+    },
+    {
+     "cmd": "take card",
+     "resp": "You take the cipher card. It reads: SHIW WKH UHFRUG LV LQ WKH GUDZHU. Clue below: shift each letter back by 3."
+    },
+    {
+     "cmd": "read card",
+     "resp": "SHIW WKH UHFRUG LV LQ WKH GUDZHU. (Caesar shift -3)"
+    },
+    {
+     "cmd": "decode word",
+     "resp": "Shifting each letter back by 3 gives: 'THE RECORD IS IN THE DRAWER.' The code word is RECORD."
+    },
+    {
+     "cmd": "unlock drawer",
+     "resp": "The brass key turns. The drawer unlocks. (You needed the code word first: try 'decode word' before 'unlock drawer'.)"
+    },
+    {
+     "cmd": "open drawer",
+     "resp": "Inside: a record card for Amelia Kiehlbauch [TG472690], b. 12 Jan 1880 Tyndall, Bon Homme Co., SD; d. 29 Aug 1969 Fresno, CA - verified signed record. Puzzle complete."
+    }
+   ],
+   "win": "Drawer open. Verified record retrieved: Amelia Kiehlbauch [TG472690]."
+  }
+ ],
+ "facts": [
+  "Edward Mccabe [TG307645]: b. Mar 1861 Scotland; parents James McCabe [TG654147] + Mary [TG812186] (both Ireland); 1900 census Pittsburgh Ward 35, Allegheny Co., PA; wife Sarah McAvoy; son John McCabe. Death year 1900 PA is tentative.",
+  "Sarah McAvoy [TG918273]: b. 13 Apr 1862 Derwent Street, Cockermouth, Cumberland, England (tentative vs abt 1863 England / Ireland in secondary sources); d. 1934 PA; parents James McAvoy [TG891052] (b. 17 Mar 1833 Ireland, d. 24 Oct 1906 Scott, Allegheny Co. PA) + Rosamund Sloan [TG540918] (b. 1838 Ireland, d. 10 Nov 1912 Scott, Allegheny Co. PA); grandparents Patrick McAvoy + Mary Evett (Newry, Ireland); John Sloan (County Down, Ireland; d. 1 Aug 1900 Washington Twp, Cambria Co. PA) + Ann McGowan (County Down).",
+  "John McCabe [TG628417]: b. 9 Feb 1896 Allegheny County, Pittsburgh, PA; d. Aug 1982 Chestnut Ridge Cemetery, Eldersville, Washington Co., PA.",
+  "James Elliott [TG673245, TG749502]: b. Apr 1817 Somerset Co., PA; d. 1906 Butler Co., PA; parents John Elliott + Margaret Scott [TG771250] (b. 10 Feb 1793 Mercer, Franklin Co. PA, d. 1 Apr 1868 Butler); son James N Elliott.",
+  "James N Elliott [TG654890]: b. 12 Oct 1855 Center Twp, Butler Co., PA; d. 1 Nov 1926 Center, Butler, PA; wife Elizabeth McQuiston [TG270541]; daughter Alice S Elliott [TG492705].",
+  "Elizabeth McQuiston [TG270541]: b. 7 Jan 1887 PA; d. 27 Aug 1940 New Castle, Lawrence Co., PA; parents Charles McQuiston [TG804631] (b. 25 Mar 1850 Butler Co. PA, d. 31 Jul 1917 Butler) + Mary Thorpe [TG295740] (b. 27 Jan 1863 PA, d. 30 May 1944 New Castle); grandparents Marshall McQuiston + Rebecca Grannis (d. 1905 near Slippery Rock, Butler Co. PA).",
+  "Alice S Elliott [TG492705]: b. 12 Jun 1906 Butler, PA; d. 24 Dec 1951 New Castle, PA (WikiTree Elliott-15069).",
+  "Albert Franklin Smith [TG839162]: b. 15 Mar 1862 Mattoon, Coles Co., IL; d. 20 Dec 1946 Fairlawn Burial Park, Hutchinson, Reno Co., KS; wife Rose Ann Prickett [TG501784] (b. 30 Jul 1869 Braceville, Grundy Co. IL; d. 28 Oct 1952 Yuma, Yuma Co. CO); parents John Isaac Smith (b. 18 Feb 1821 Pittsburgh; d. 7 Dec 1916 Wray, Yuma Co. CO) + Ruanna Hamilton (b. 27 Jul 1827 Gnadenhutten, OH; d. 19 Feb 1908 Monegaw Springs, MO); Charles Prickett (b. 16 Oct 1829 Apakesha Grove, OH; d. 10 Jul 1903 Vernon, Yuma Co. CO) + Adaline A Holderman (b. 24 Apr 1835 Marion Co. OH; d. 28 Sep 1918 Yuma Co. CO).",
+  "Archie T Smith [TG713289]: b. 21 Sep 1894 Greeley, Weld Co., CO; d. 8 May 1973 San Diego, San Diego Co., CA (Smith DNA Project tree entry I99149; Find a Grave 224035291); wife Polly Myrtle Bowman [TG856134]; daughter Noma Vade Smith [TG315902].",
+  "Polly Myrtle Bowman [TG856134]: b. 18 May 1887 Morgan Co., IN; d. 24 Jun 1955 San Diego, CA; parents Thomas S Bowman [TG962430] (b. Feb 1863 Eminence, Morgan Co. IN; d. 1904) + Nancy Jane Lambert [TG348671] (b. 8 Jun 1864 Morgan Co. IN; d. 5 Nov 1946 Jefferson Co. IN); grandparents Aaron Lorenzo Lambert [TG684510] (b. 13 Oct 1830 Randolph, NC; d. 19 Jan 1910 Morgan, IN) + Tabitha Ann Brown; Henry Ira Lambert + Sarah 'Sally' M Craven; Abel Bowman + Mary Martha Shumaker.",
+  "Noma Vade Smith [TG315902]: b. 19 Mar 1927 San Diego, CA; d. 20 Dec 1991 San Diego County, CA.",
+  "Percy W Shapley [TG739123]: b. 6 May 1901 Floyd, Floyd Co., IA (tentative vs 1 Jan 1902 Iowa on WikiTree); d. 11 Sep 1946 Pasco, Franklin Co., WA; parents William Shapley (b. abt 1798/9 Granville, Washington Co. NY; d. 1861-1864 IA) + Olive G Stafford [TG759401] (b. 30 Apr 1876 Calamus, WI; d. 22 May 1946 Charles City, Floyd Co. IA); grandparents Patrick Henry Shapley (Emmett, Calhoun Co. MI) + Clarissa Gridley (NY); Mary Rice (WI); Joseph W Stafford (NY) + Hulda Sylvah (PA); Barton J Waite (NY) + Susannah Clark Bacon (VT; Lorain Co. OH); Alice Waite (Lorain Co. OH; Gardena, Bottineau Co. ND).",
+  "Minnie Schlorff [TG742018]: b. 1 Mar 1905 10920 Mackinaw Ave, Chicago, Cook Co. IL; d. 12 Apr 1946 Minneapolis, Hennepin Co., MN; parents William John Ludwig Sclorf [TG916000] (b. 21 Jul 1867 Pomerania; d. 1937 WI) + Mary Johannsen [TG324786] (b. 28 Nov 1868 Tondern, Schleswig-Holstein; d. 1951 Shawano Co. WI); m. Percy W Shapley 1924 (Geneanet); later m. Leland J Andrews 1943 (tentative, user-submitted only).",
+  "William R Maynard [TG715094]: b. 13 Dec 1878 Dassel, Meeker Co., MN; d. 24 Nov 1958 Brooksville, Hernando Co., FL (Coastal Breeze News confirms Brooksville); parents George Maynard [TG859743] (b. 27 Aug 1852 Prestonsburg, Floyd Co. KY; d. 2 May 1932 Minot, Ward Co. ND) + Margaret Rose Sansom [TG502168] (b. 11 Feb 1859 Logan Co. KY; d. 28 Dec 1928 Rosehill, Covington, AL); wife Gail Agnes Hillman [TG286753]; son Burke C Maynard [TG239670].",
+  "William Maynard Sr. (person 96): b. 18 May 1830 Pike Co. KY; d. 25 Mar 1908 Pierce Co. WA; 1870 census: farmer and township supervisor, Dassel Twp, Meeker Co. MN (WikiTree Maynard-162); wife Sarah Parsons (b. 9 Aug 1821 KY; d. 14 Mar 1891 Bertha, Todd Co. MN). Riley Sansom (b. 10 Feb 1831 Pike Co. KY; d. 6 Apr 1905 Riverside, Snohomish Co. WA) + Sarah Sally Kline (b. 20 Jul 1836 Glen Alum, Logan Co. VA/WV; d. 6 Sep 1928 Snohomish WA).",
+  "Gail Agnes Hillman [TG286753]: b. 21 Sep 1884 Cannon Falls, Goodhue Co. MN; d. 12 Apr 1982 Saint Paul, Ramsey Co. MN; parents Fred Ernest Hillman [TG796320] (b. 21 Aug 1857 MN; d. 4 Dec 1950 Bald Eagle Center, Cass Co. MN) + Agnes Maria Platt [TG148675] (b. 27 Apr 1857 Palmyra, Jefferson Co. WI; d. 23 Feb 1946 Ramsey Co. MN); grandparents Levi Colburn Hillman (b. 25 Jan 1822 Conway, Franklin Co. MA; d. 11 Mar 1861 Randolph, Dakota Terr. MN) + Mary Marinda Shelly (b. 1830 CT; d. 11 Mar 1897 Randolph, Dakota Co. MN); David C Platt [TG158342] (b. 16 May 1823 Berne, Clinton Co. NY; d. 23 Oct 1904 Cannon Falls, Goodhue Co. MN) + Miranda McLane (b. 12 Mar 1817 Alburgh, Grand Isle Co. VT; d. 24 Jul 1861 Werner, Juneau Co. WI).",
+  "Burke C Maynard [TG239670]: b. 11 Jun 1904 North Dakota; d. 5 Dec 1986 Morro Bay, San Luis Obispo Co., CA (Find a Grave 93464196).",
+  "August Friedrich Hedtke [TG923450]: b. 23 Aug 1847 Alt Paleschken, Kreis Berent, Reg.-Bez. Danzig, West Prussia; d. 31 Jan 1918 Henderson, Sibley Co., MN; wife Amelia Carolina Luedtke [TG610982] (b. Feb 1850 Pomerania, Prussia; d. 24 Apr 1925 Henderson, Sibley Co. MN); parents Johann E Hedtke [TG842378] (b. 5 Dec 1819 West Prussia; d. 28 Aug 1894 Chaska, Carver Co. MN) + Florentine Henriette Florence Hedtke [TG413360] (b. 31 Jul 1828 Neu/Alt Paleschken; d. 18 Feb 1901 Chaska, Carver Co. MN).",
+  "Robert R Hedtke [TG903148]: b. 18 Jan 1876 Sibley, MN (birth month tentative); d. 13 Feb 1954 Fresno, CA; wife Amelia Kiehlbauch [TG472690]; daughter Amelia B Hetdke [TG984215] (b. 28 Dec 1904 North Dakota; d. 15 May 1979 Morro Bay, San Luis Obispo Co., CA)."
+ ],
+ "sources_apa": [
+  "WikiTree. (2020, January 10). Edward Mccabe (abt. 1861-?) [Mccabe-2780]. https://www.wikitree.com/wiki/Mccabe-2780 (1900 US Census, Pittsburgh Ward 35, Allegheny Co., PA)",
+  "WikiTree. (2020, January 10). Sarah Mc Avoy (abt. 1863-?) [Mc_Avoy-353]. https://www.wikitree.com/wiki/Mc_Avoy-353 (1880 US Census, Elk, Clarion Co., PA)",
+  "WikiTree. (n.d.). Shapley genealogy. https://www.wikitree.com/genealogy/SHAPLEY (Percy Shapley d. 11 Sep 1946 Pasco, Franklin Co., WA)",
+  "WikiTree. (n.d.). Alice S Elliott [Elliott-15069]. https://www.wikitree.com/wiki/Elliott-15069",
+  "WikiTree. (n.d.). William Maynard (1830-1908) [Maynard-162]. https://www.wikitree.com/wiki/Maynard-162 (1870 census, Dassel Twp, Meeker Co. MN) ; WikiTree. George Maynard [Maynard-103]. https://www.wikitree.com/wiki/Maynard-103",
+  "Smith Official DNA Project / Smith Worldwide. (n.d.). Archie T Smith [personID=I99149]. https://www.smithsworldwide.org/tng/getperson.php?personID=I99149",
+  "GenealogyTrails. (n.d.). Bon Homme County, SD births. https://genealogytrails.com/sdak/bonhomme/BirthsIJ.html",
+  "FamilySearch shared tree via Reddit r/Genealogy. (2025). 'Tracing the Hedtke Family Lineage from Robert R. Hedtke.' https://www.reddit.com/r/Genealogy/comments/1l42lrd/ (Robert Richard Hedtke b. Jun 1876 Sibley Co. MN, d. 13 Feb 1954 Fresno; m. Amelia F. Kiehlbauch)",
+  "Reddit r/Genealogy. (2025). 'Researching the McCabe / Shapley / Schlorf Lines.' https://www.reddit.com/r/Genealogy/comments/1jx93nz/ (Minnie Schlorff b. 1 Mar 1905 Chicago, d. 12 Apr 1946 Minneapolis)",
+  "Geneanet. (n.d.). Family tree of jbmccabe - SCHLORFF Minnie. https://en.geneanet.org/surnames/SCHLORFF (m. Percy W Shapley 1924; m. Leland J Andrews 1943)",
+  "Coastal Breeze News. (n.d.). 'William R. Maynard, the rest of the story?' https://www.coastalbreezenews.com/columnists/coastal_history/william-r-maynard-the-rest-of-the-story/article_dcacaf46-817e-5a69-8f92-4392889a620b.html",
+  "Ancestry.com public tree records. (n.d.). Polly Myrtle Bowman (b. 18 May 1887 Morgan, IN; d. 24 Jun 1955 San Diego; parents Thomas S Bowman, Nancy Jane Lambert); James Nelson Elliott record. https://www.ancestry.com/genealogy/records/results?firstName=polly&lastName=bowman",
+  "Find a Grave (user-submitted memorials, used as corroborating leads only). Memorials: 10143299 (Albert Franklin Smith), 224035291 (Archie T Smith), 255313550 (Myrtle Polly Smith), 315902-line (Noma Vade Smith record in signed snapshot), 260875592 (Robert R Hedtke), 239646934 (Minnie Schlorff Andrews), 222439556 (James Nelson Elliott), 93464196 (Burke C Maynard), 10806355 (Aaron Lorenzo Lambert), 75234154 (August F. Hedtke), 54692058 (Johann E Hedtke), 81879786 (David C Platt), 91939608 (Fred Ernest Hillman), 87752705 (Agnes Maria Hillman), 158111098 (William Maynard), 254033290 (William Riley Maynard). https://www.findagrave.com",
+  "Mitchell, R. B. (1937). The McQuiston, McCuiston and McQuesten families, 1620-1937. https://archive.org/stream/mcquistonmccuist00mcqu_0/mcquistonmccuist00mcqu_0_djvu.txt ; GMcCuistion family site. https://www.gmccuistion.com",
+  "Wikipedia. (n.d.). Black Sea Germans. https://en.wikipedia.org/wiki/Black_Sea_Germans ; NDSU GRHC. (n.d.). Germans from Odessa exhibit. https://library.ndsu.edu/grhc/sites/default/files/image-directory/Collections-Exhibits-GermansfromOdessa.pdf ; FamilySearch. (n.d.). Germans from Russia: emigration and immigration. https://www.familysearch.org/en/wiki/Germans_from_Russia_Emigration_and_Immigration ; South Dakota Historical Society. (1909). South Dakota History 11(3). https://www.sdhspress.com/journal/south-dakota-history-11-3/a-1909-report-on-russian-german-settlements-in-southern-dakota/vol-11-no-3-a-1909-report-on-russian-german-settlements-in-southern-dakota.pdf ; AHSGR. (n.d.). Passenger lists by ship. https://ahsgr.org/research/immigration-passenger-lists/by-ship/",
+  "FamilySearch Wiki (county repositories). Bon Homme County SD https://www.familysearch.org/en/wiki/Bon_Homme_County,_South_Dakota_Genealogy ; Butler County PA https://www.familysearch.org/en/wiki/Butler_County,_Pennsylvania_Genealogy ; Ramsey County MN https://www.familysearch.org/en/wiki/Ramsey_County,_Minnesota_Genealogy"
+ ],
+ "tentative_not_fact": [
+  "Edward Mccabe death year 1900 PA (alive in the 1900 census per WikiTree source; another source says before 1934 PA) - TENTATIVE",
+  "Sarah McAvoy exact birth date/place (13 Apr 1862 Cockermouth per signed record vs abt 1863 England per WikiTree vs Apr 1862 Ireland per one secondary source) - TENTATIVE",
+  "Robert R Hedtke birth month (18 Jan vs Jun 1876) - TENTATIVE",
+  "Percy W Shapley birth (6 May 1901 Floyd, IA vs 1 Jan 1902 Iowa) - TENTATIVE",
+  "Minnie Schlorff's later marriage to Leland J Andrews (1943) - user-submitted sources only - TENTATIVE",
+  "Exact modern village for 'Neuberg, Cherson Prov.' - TENTATIVE; specific ship/manifest for the Kiehlbauch crossing - NOT FOUND, no claim made",
+  "Reason Josef Kiehlbauch died in Chicago while family settled in SD - UNKNOWN, not speculated"
+ ],
+ "music_credits": [
+  "Ars Niemo - Small Talk Build IV.ogg - Eric Niemeyer, CC BY 3.0, via Wikimedia Commons (intro/title cue)",
+  "A Most Joyous Occasion - Brylie Christopher Oxley, CC BY 4.0, via Wikimedia Commons (map cue)",
+  "After You.wav - Dan Lebowitz, CC BY-SA 4.0, via Wikimedia Commons (Pittsburgh road)",
+  "Bankrupt Bakery - 01 - One Night.ogg - Bankrupt Bakery, CC BY 4.0, via Wikimedia Commons (Butler County road)",
+  "FZ Side E - Trail - Disasterpeace, CC BY-SA 3.0, via Wikimedia Commons (San Diego road)",
+  "Kate Orange - Virus instrumental.mp3 - KATE ORANGE, CC BY-SA 3.0, via Wikimedia Commons (Iowa road)",
+  "A night in a old game forest - Felipe Ruiz P., CC BY-SA 4.0, via Wikimedia Commons (Minnesota road)",
+  "Auferstehung Hannover Orgel BWV 532.ogg - Manuel Doormann, CC BY-SA 3.0, via Wikimedia Commons (Prussia road)",
+  "A Tale of Distant Lands.mp3 - Bernd Krueger, Public domain, via Wikimedia Commons (activity deck)",
+  "90sec EDITOR wiki loop library - Andy R. Jordan, CC BY-SA 4.0, via Wikimedia Commons (outro)",
+  "Alternates not cued today: AVINU MALKEINU.ogg (Li-Ron Choir Israel, FAL) and BEIRUT CAMILLE ALLAM.ogg (Camille Allam, PD)",
+  "Excluded for 2026-11-21 per owner: Adefg.wav (previous session track) and 01_Lentitud.ogg (ogg currently used by the main game). Once-ever/conditional tracks (AroundTheWorldBounce, Armin Schibler, 02 Eivind Aarset, 01 L'ultimo waltzer, Insomnia Pt. 1/2) not cued."
+ ]
+}

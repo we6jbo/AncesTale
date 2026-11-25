@@ -1,0 +1,34 @@
+{
+  "engines": [
+    "hosted",
+    "local-en",
+    "local-en-US",
+    "local-en-GB",
+    "local-default",
+    "skip",
+    "skip",
+    "skip",
+    "skip",
+    "skip"
+  ],
+  "max_attempts": 5,
+  "troubleshooting_seconds": 180,
+  "reading_seconds": 900,
+  "idle_seconds": 300,
+  "frustration_count": 3,
+  "allow_reading": true,
+  "use_success_recording": false,
+  "prompt_map": {
+    "morning": "morning",
+    "afternoon": "afternoon",
+    "evening": "evening",
+    "wait": "wait",
+    "initial": "initial",
+    "troubleshoot": "troubleshoot",
+    "retry": "retry",
+    "success_recording": "success_recording",
+    "fallback": "fallback",
+    "reading_check": "reading_check",
+    "continue_check": "continue_check"
+  }
+}

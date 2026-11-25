@@ -1,0 +1,10 @@
+# AncesTale running-game songs — source: /tmp/eee/a.txt (owner, 2026-11-21, updated ~10:20)
+# One URL per line; only lines starting with http:// or https:// are used; '#' = comment.
+# NOTE: a.txt's Insomnia URL used %C3%A4 (UTF-8 "ä"), which 404s on the Pi; the actual Pi
+# filename contains a literal '?' byte, so the verified URL (HTTP 206, 2026-11-21) uses %3F.
+# Order = play order while the game runs; the 90sec EDITOR track is last because the owner
+# noted it should play "towards the near end of the game".
+http://192.168.5.215:8081/nov-game/music/02_Meyd%3Fn_-_Insomnia_Pt._1.mp3
+http://192.168.5.215:8081/nov-game/music/_FZ_Side_E_-_Trail__by_Disasterpeace.wav
+http://192.168.5.215:8081/nov-game/music/After_You.wav
+http://192.168.5.215:8081/nov-game/music/90sec_EDITOR_wiki_loop_library_-_by_Andy_R._Jordan.wav
